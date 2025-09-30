@@ -741,10 +741,7 @@ export default function Index() {
               </p>
               
               <address className="not-italic text-sm text-slate-600 mb-4">
-                <MapPin className="w-4 h-4 text-[#2626e7]" />
-                <span className="text-sm">
                   Broskieshub, ACIC-KIF, KARE, Central Library 2nd Floor, Anand Nagar, Krishnan Koil, S.Ramachandrapuram, Virudhunagar, Srivilliputhur, Tamil Nadu, India 626126
-                </span>
               </address>
               <p className="text-sm text-slate-500">© 2025 BroskiesHub Technologies Pvt. Ltd. All rights reserved.</p>
             </div>
