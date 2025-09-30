@@ -361,7 +361,7 @@ export default function Index() {
               <div className="relative">
                 <div className="absolute inset-0 bg-brand-gradient rounded-3xl transform rotate-3 opacity-20"></div>
                 <img
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                  src="https://res.cloudinary.com/dk2wudmxh/image/upload/v1759252827/C-herSec1_2_umrapy.jpg"
                   alt="Wasted time and resources in traditional hiring"
                   className="relative rounded-3xl shadow-2xl hover:shadow-3xl transition-shadow duration-500 transform hover:scale-105"
                 />
