@@ -167,7 +167,7 @@ export default function Index() {
               <Badge className="mb-6 bg-blue-100 text-slate-700 border-none px-4 py-2 rounded-full font-medium">
                 TRUSTED BY INNOVATIVE HIRING TEAMS
               </Badge>
-              <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6 bg-[linear-gradient(90deg,#2626e7,#4b4bff)] bg-clip-text text-transparent">
+              <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6 gradient-flow bg-clip-text text-transparent">
                 Hire Engineers Who Actually Deliver
               </h1>
               <p className="text-xl text-slate-700 mb-8 leading-relaxed max-w-2xl">
