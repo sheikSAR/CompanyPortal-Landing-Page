@@ -21,6 +21,7 @@ import {
   MapPin,
   Target,
   Zap,
+  Shield,
   Mail,
   Building,
   User,
@@ -453,7 +454,7 @@ export default function Index() {
             <Card className="border border-white/20 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 bg-white/80 backdrop-blur-sm">
               <CardContent className="p-8 text-center">
                 <div className="w-16 h-16 bg-brand-gradient rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Zap className="w-8 h-8 text-white" />
+                  <Shield className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-3xl font-bold text-slate-900 mb-2">90%</h3>
                 <p className="text-slate-600 font-medium">
