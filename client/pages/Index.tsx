@@ -465,52 +465,11 @@ export default function Index() {
                 See Sample Report
               </Button>
             </div>
-            <div>
-              <Card className="border border-white/20 shadow-2xl bg-white/90 backdrop-blur-sm">
-                <CardHeader>
-                  <CardTitle className="text-xl font-bold text-slate-900 mb-4">
-                    Candidate Skill Passport: Anjali Sharma
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="space-y-4">
-                    <div>
-                      <div className="flex justify-between mb-2">
-                        <span className="text-sm font-medium text-slate-700">Learning Adaptability</span>
-                        <span className="text-sm font-medium text-[#2626e7]">92%</span>
-                      </div>
-                      <div className="w-full bg-slate-200 rounded-full h-3">
-                        <div className="bg-brand-gradient h-3 rounded-full transition-all duration-1000 ease-out" style={{ width: "92%" }}></div>
-                      </div>
-                    </div>
-
-                    <div>
-                      <div className="flex justify-between mb-2">
-                        <span className="text-sm font-medium text-slate-700">Problem-Solving Efficiency</span>
-                        <span className="text-sm font-medium text-[#2626e7]">88%</span>
-                      </div>
-                      <div className="w-full bg-slate-200 rounded-full h-3">
-                        <div className="bg-brand-gradient h-3 rounded-full transition-all duration-1000 ease-out delay-200" style={{ width: "88%" }}></div>
-                      </div>
-                    </div>
-
-                    <div>
-                      <div className="flex justify-between mb-2">
-                        <span className="text-sm font-medium text-slate-700">Code Quality</span>
-                        <span className="text-sm font-medium text-[#2626e7]">95%</span>
-                      </div>
-                      <div className="w-full bg-slate-200 rounded-full h-3">
-                        <div className="bg-brand-gradient h-3 rounded-full transition-all duration-1000 ease-out delay-400" style={{ width: "95%" }}></div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="border-t border-slate-200 pt-4">
-                    <p className="text-sm text-slate-600">
-                      <span className="font-bold text-slate-800">AI Insight:</span> Anjali demonstrated high learning velocity, quickly mastering the new API after an initial struggle. This indicates resilience and adaptability.
-                    </p>
-                  </div>
-                </CardContent>
+            <div className="flex items-center justify-center">
+              <Card className="legendary-card border border-slate-100/40 bg-white/95 shadow-xl p-8 max-w-sm text-center">
+                <h4 className="text-lg font-semibold text-slate-900 mb-2 legendary-title">Sample Skill Passport</h4>
+                <p className="text-slate-600 mb-4">Request a sample candidate report to see the depth of our performance insights and Skill Passports.</p>
+                <Button variant="cta" onClick={scrollToForm}>Request Sample</Button>
               </Card>
             </div>
           </div>
