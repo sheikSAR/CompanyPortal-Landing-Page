@@ -107,14 +107,14 @@ export default {
         "gradient-x": {
           "0%, 100%": {
             "background-size": "200% 200%",
-            "background-position": "left center"
+            "background-position": "left center",
           },
           "50%": {
             "background-size": "200% 200%",
-            "background-position": "right center"
-          }
+            "background-position": "right center",
+          },
         },
-        "float": {
+        float: {
           "0%, 100%": { transform: "translateY(0px)" },
           "50%": { transform: "translateY(-20px)" },
         },
@@ -129,7 +129,7 @@ export default {
         "bounce-subtle": "bounce-subtle 2s ease-in-out infinite",
         "pulse-glow": "pulse-glow 2s ease-in-out infinite",
         "gradient-x": "gradient-x 15s ease infinite",
-        "float": "float 3s ease-in-out infinite",
+        float: "float 3s ease-in-out infinite",
       },
     },
   },
