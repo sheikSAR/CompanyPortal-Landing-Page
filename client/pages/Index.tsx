@@ -67,7 +67,9 @@ export default function Index() {
   };
 
   const scrollToForm = () => {
-    document.getElementById("hero-form")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    document
+      .getElementById("hero-form")
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   const universityLogos: string[] = [
@@ -137,11 +139,17 @@ export default function Index() {
               />
             </a>
             <div className="hidden md:flex items-center gap-6">
-              <a href="tel:+918148040507" className="flex items-center gap-2 text-slate-700 hover:text-[#2626e7] transition-colors">
+              <a
+                href="tel:+918148040507"
+                className="flex items-center gap-2 text-slate-700 hover:text-[#2626e7] transition-colors"
+              >
                 <Phone className="w-5 h-5 text-[#2626e7]" />
                 <span className="font-medium">+918148040507</span>
               </a>
-              <a href="mailto:support@broskieshub.com" className="flex items-center gap-2 text-slate-700 hover:text-[#2626e7] transition-colors">
+              <a
+                href="mailto:support@broskieshub.com"
+                className="flex items-center gap-2 text-slate-700 hover:text-[#2626e7] transition-colors"
+              >
                 <Mail className="w-5 h-5 text-[#2626e7]" />
                 <span className="font-medium">support@broskieshub.com</span>
               </a>
@@ -181,8 +189,11 @@ export default function Index() {
                     <Check className="w-5 h-5 text-white" />
                   </div>
                   <p className="text-slate-700 text-lg">
-                    <span className="font-semibold text-slate-900">De-risk Your Hiring:</span> Make offers based on 45 days of proven
-                    performance, not a 45-minute interview.
+                    <span className="font-semibold text-slate-900">
+                      De-risk Your Hiring:
+                    </span>{" "}
+                    Make offers based on 45 days of proven performance, not a
+                    45-minute interview.
                   </p>
                 </div>
                 <div className="flex items-start gap-4 group">
@@ -190,7 +201,11 @@ export default function Index() {
                     <Check className="w-5 h-5 text-white" />
                   </div>
                   <p className="text-slate-700 text-lg">
-                    <span className="font-semibold text-slate-900">Save Engineering Hours:</span> Stop wasting your senior developers' time on endless screening calls. We do the heavy lifting.
+                    <span className="font-semibold text-slate-900">
+                      Save Engineering Hours:
+                    </span>{" "}
+                    Stop wasting your senior developers' time on endless
+                    screening calls. We do the heavy lifting.
                   </p>
                 </div>
                 <div className="flex items-start gap-4 group">
@@ -198,16 +213,26 @@ export default function Index() {
                     <Check className="w-5 h-5 text-white" />
                   </div>
                   <p className="text-slate-700 text-lg">
-                    <span className="font-semibold text-slate-900">Access Hidden Gems:</span> Tap into a national pool of high-potential talent from overlooked Tier-2 and Tier-3 colleges.
+                    <span className="font-semibold text-slate-900">
+                      Access Hidden Gems:
+                    </span>{" "}
+                    Tap into a national pool of high-potential talent from
+                    overlooked Tier-2 and Tier-3 colleges.
                   </p>
                 </div>
               </div>
 
-              <Button variant="cta" size="lg" onClick={scrollToForm} className="px-12 py-6 text-lg rounded-xl">
+              <Button
+                variant="cta"
+                size="lg"
+                onClick={scrollToForm}
+                className="px-12 py-6 text-lg rounded-xl"
+              >
                 Request My Free Pilot
               </Button>
               <p className="mt-4 text-sm text-slate-600 font-medium max-w-md">
-                Fill out the form to see how we can build your custom talent pipeline.
+                Fill out the form to see how we can build your custom talent
+                pipeline.
               </p>
             </div>
 
@@ -223,10 +248,17 @@ export default function Index() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="px-8 pb-8">
-                  <form id="hero-form" onSubmit={handleSubmit} className="space-y-6">
+                  <form
+                    id="hero-form"
+                    onSubmit={handleSubmit}
+                    className="space-y-6"
+                  >
                     <div className="space-y-4">
                       <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
+                        <label
+                          htmlFor="name"
+                          className="block text-sm font-medium text-slate-700 mb-2"
+                        >
                           Full Name
                         </label>
                         <div className="relative">
@@ -245,7 +277,10 @@ export default function Index() {
                       </div>
 
                       <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">
+                        <label
+                          htmlFor="email"
+                          className="block text-sm font-medium text-slate-700 mb-2"
+                        >
                           Work Email
                         </label>
                         <div className="relative">
@@ -264,7 +299,10 @@ export default function Index() {
                       </div>
 
                       <div>
-                        <label htmlFor="company" className="block text-sm font-medium text-slate-700 mb-2">
+                        <label
+                          htmlFor="company"
+                          className="block text-sm font-medium text-slate-700 mb-2"
+                        >
                           Company
                         </label>
                         <div className="relative">
@@ -303,7 +341,10 @@ export default function Index() {
           <div className="marquee group">
             <div className="marquee-track">
               {[...universityLogos, ...universityLogos].map((logo, index) => (
-                <div key={index} className="flex justify-center items-center h-16 px-4">
+                <div
+                  key={index}
+                  className="flex justify-center items-center h-16 px-4"
+                >
                   <img
                     src={logo}
                     alt={`University ${index + 1}`}
@@ -341,18 +382,24 @@ export default function Index() {
                 <div className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm border-l-4 border-orange-400">
                   <div className="w-2 h-2 bg-orange-400 rounded-full mt-3"></div>
                   <p className="text-slate-700 font-medium">
-                    Nearly 50% of new hires are a poor fit and leave within 18 months.
+                    Nearly 50% of new hires are a poor fit and leave within 18
+                    months.
                   </p>
                 </div>
                 <div className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm border-l-4 border-yellow-400">
                   <div className="w-2 h-2 bg-yellow-400 rounded-full mt-3"></div>
                   <p className="text-slate-700 font-medium">
-                    You're competing for the same 1% of talent from elite colleges, ignoring a vast hidden talent pool.
+                    You're competing for the same 1% of talent from elite
+                    colleges, ignoring a vast hidden talent pool.
                   </p>
                 </div>
               </div>
 
-              <Button variant="cta" onClick={scrollToForm} className="px-10 py-4 text-lg rounded-xl">
+              <Button
+                variant="cta"
+                onClick={scrollToForm}
+                className="px-10 py-4 text-lg rounded-xl"
+              >
                 Fix My Hiring Process
               </Button>
             </div>
@@ -385,7 +432,9 @@ export default function Index() {
                   <Target className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-3xl font-bold text-slate-900 mb-2">85%</h3>
-                <p className="text-slate-600 font-medium">Higher retention rate vs traditional hiring</p>
+                <p className="text-slate-600 font-medium">
+                  Higher retention rate vs traditional hiring
+                </p>
               </CardContent>
             </Card>
 
@@ -395,7 +444,9 @@ export default function Index() {
                   <Shield className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-3xl font-bold text-slate-900 mb-2">70%</h3>
-                <p className="text-slate-600 font-medium">Faster time-to-hire process</p>
+                <p className="text-slate-600 font-medium">
+                  Faster time-to-hire process
+                </p>
               </CardContent>
             </Card>
 
@@ -405,13 +456,19 @@ export default function Index() {
                   <Shield className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-3xl font-bold text-slate-900 mb-2">90%</h3>
-                <p className="text-slate-600 font-medium">Engineering time saved on screening</p>
+                <p className="text-slate-600 font-medium">
+                  Engineering time saved on screening
+                </p>
               </CardContent>
             </Card>
           </div>
 
           <div className="text-center">
-            <Button variant="cta" onClick={scrollToForm} className="px-12 py-4 text-lg rounded-xl">
+            <Button
+              variant="cta"
+              onClick={scrollToForm}
+              className="px-12 py-4 text-lg rounded-xl"
+            >
               See Our Success Stories
             </Button>
           </div>
@@ -441,9 +498,16 @@ export default function Index() {
                 Custom-Vetted Talent Pipelines
               </h3>
               <p className="text-xl text-slate-600 mb-8 leading-relaxed">
-                Stop sifting through generic applicants. We work with you to design a 45-day work simulation based on your tech stack, your challenges, and your culture. Candidates prove they can do the job before you even see a resume.
+                Stop sifting through generic applicants. We work with you to
+                design a 45-day work simulation based on your tech stack, your
+                challenges, and your culture. Candidates prove they can do the
+                job before you even see a resume.
               </p>
-              <Button variant="cta" onClick={scrollToForm} className="px-10 py-4 rounded-xl">
+              <Button
+                variant="cta"
+                onClick={scrollToForm}
+                className="px-10 py-4 rounded-xl"
+              >
                 Build My Pipeline
               </Button>
             </div>
@@ -459,17 +523,31 @@ export default function Index() {
                 Hire Based on Data, Not Gut Feel
               </h3>
               <p className="text-xl text-slate-600 mb-8 leading-relaxed">
-                Our AI-powered platform analyzes every commit, decision, and solution, generating a "Skill Passport" for each candidate. This deep performance report gives you undeniable proof of their abilities and learning potential.
+                Our AI-powered platform analyzes every commit, decision, and
+                solution, generating a "Skill Passport" for each candidate. This
+                deep performance report gives you undeniable proof of their
+                abilities and learning potential.
               </p>
-              <Button variant="cta" onClick={scrollToForm} className="px-10 py-4 rounded-xl">
+              <Button
+                variant="cta"
+                onClick={scrollToForm}
+                className="px-10 py-4 rounded-xl"
+              >
                 See Sample Report
               </Button>
             </div>
             <div className="flex items-center justify-center">
               <Card className="legendary-card border border-slate-100/40 bg-white/95 shadow-xl p-8 max-w-sm text-center">
-                <h4 className="text-lg font-semibold text-slate-900 mb-2 legendary-title">Sample Skill Passport</h4>
-                <p className="text-slate-600 mb-4">Request a sample candidate report to see the depth of our performance insights and Skill Passports.</p>
-                <Button variant="cta" onClick={scrollToForm}>Request Sample</Button>
+                <h4 className="text-lg font-semibold text-slate-900 mb-2 legendary-title">
+                  Sample Skill Passport
+                </h4>
+                <p className="text-slate-600 mb-4">
+                  Request a sample candidate report to see the depth of our
+                  performance insights and Skill Passports.
+                </p>
+                <Button variant="cta" onClick={scrollToForm}>
+                  Request Sample
+                </Button>
               </Card>
             </div>
           </div>
@@ -499,25 +577,43 @@ export default function Index() {
                           BroskiesHub
                         </div>
                       </th>
-                      <th className="p-6 text-center font-medium text-slate-600">Traditional Recruiters</th>
-                      <th className="p-6 text-center font-medium text-slate-600">Job Boards</th>
-                      <th className="p-6 text-center font-medium text-slate-600">Coding Platforms</th>
+                      <th className="p-6 text-center font-medium text-slate-600">
+                        Traditional Recruiters
+                      </th>
+                      <th className="p-6 text-center font-medium text-slate-600">
+                        Job Boards
+                      </th>
+                      <th className="p-6 text-center font-medium text-slate-600">
+                        Coding Platforms
+                      </th>
                     </tr>
                   </thead>
                   <tbody className="text-slate-600">
                     <tr className="border-b border-slate-100 hover:bg-slate-50 transition-colors">
-                      <td className="p-6 font-semibold text-slate-900">Vetting Method</td>
-                      <td className="p-6 text-center text-slate-900 font-medium">45-Day Work Simulation</td>
+                      <td className="p-6 font-semibold text-slate-900">
+                        Vetting Method
+                      </td>
+                      <td className="p-6 text-center text-slate-900 font-medium">
+                        45-Day Work Simulation
+                      </td>
                       <td className="p-6 text-center">Resume Screening</td>
                       <td className="p-6 text-center">Keyword Matching</td>
-                      <td className="p-6 text-center">Generic Coding Puzzles</td>
+                      <td className="p-6 text-center">
+                        Generic Coding Puzzles
+                      </td>
                     </tr>
                     <tr className="border-b border-slate-100 hover:bg-slate-50 transition-colors">
-                      <td className="p-6 font-semibold text-slate-900">Signal Quality</td>
+                      <td className="p-6 font-semibold text-slate-900">
+                        Signal Quality
+                      </td>
                       <td className="p-6 text-center">
-                        <span className="font-bold text-2xl text-green-500">✓✓✓</span>
+                        <span className="font-bold text-2xl text-green-500">
+                          ✓✓✓
+                        </span>
                         <br />
-                        <span className="text-sm text-slate-600">(Proven Performance)</span>
+                        <span className="text-sm text-slate-600">
+                          (Proven Performance)
+                        </span>
                       </td>
                       <td className="p-6 text-center">
                         <span className="text-2xl text-red-500">✗</span>
@@ -536,9 +632,13 @@ export default function Index() {
                       </td>
                     </tr>
                     <tr className="border-b border-slate-100 hover:bg-slate-50 transition-colors">
-                      <td className="p-6 font-semibold text-slate-900">Access to Hidden Gems</td>
+                      <td className="p-6 font-semibold text-slate-900">
+                        Access to Hidden Gems
+                      </td>
                       <td className="p-6 text-center">
-                        <span className="font-bold text-2xl text-green-500">✓✓✓</span>
+                        <span className="font-bold text-2xl text-green-500">
+                          ✓✓✓
+                        </span>
                       </td>
                       <td className="p-6 text-center">
                         <span className="text-2xl text-red-500">✗</span>
@@ -551,8 +651,12 @@ export default function Index() {
                       </td>
                     </tr>
                     <tr>
-                      <td className="p-6 font-semibold text-slate-900">Engineering Time Saved</td>
-                      <td className="p-6 text-center text-slate-900 font-bold text-lg">&gt; 80%</td>
+                      <td className="p-6 font-semibold text-slate-900">
+                        Engineering Time Saved
+                      </td>
+                      <td className="p-6 text-center text-slate-900 font-bold text-lg">
+                        &gt; 80%
+                      </td>
                       <td className="p-6 text-center">~ 20%</td>
                       <td className="p-6 text-center">0%</td>
                       <td className="p-6 text-center">~ 50%</td>
@@ -588,9 +692,12 @@ export default function Index() {
               </div>
               <Card className="border border-white/20 shadow-xl bg-white/90 backdrop-blur-sm hover:shadow-2xl transition-all duration-300 hover:scale-105">
                 <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold text-slate-900 mb-4">Define Your Ideal Hire</h3>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-4">
+                    Define Your Ideal Hire
+                  </h3>
                   <p className="text-slate-600 leading-relaxed">
-                    Tell us about the role. We'll co-design a custom work simulation that tests for the exact skills you need.
+                    Tell us about the role. We'll co-design a custom work
+                    simulation that tests for the exact skills you need.
                   </p>
                 </CardContent>
               </Card>
@@ -604,9 +711,12 @@ export default function Index() {
               </div>
               <Card className="border border-white/20 shadow-xl bg-white/90 backdrop-blur-sm hover:shadow-2xl transition-all duration-300 hover:scale-105">
                 <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold text-slate-900 mb-4">We Vet at Scale</h3>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-4">
+                    We Vet at Scale
+                  </h3>
                   <p className="text-slate-600 leading-relaxed">
-                    We deploy your challenge to our talent pool. Our AI analyzes their work, identifying the top performers.
+                    We deploy your challenge to our talent pool. Our AI analyzes
+                    their work, identifying the top performers.
                   </p>
                 </CardContent>
               </Card>
@@ -620,9 +730,12 @@ export default function Index() {
               </div>
               <Card className="border border-white/20 shadow-xl bg-white/90 backdrop-blur-sm hover:shadow-2xl transition-all duration-300 hover:scale-105">
                 <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold text-slate-900 mb-4">Conduct Final Interviews</h3>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-4">
+                    Conduct Final Interviews
+                  </h3>
                   <p className="text-slate-600 leading-relaxed">
-                    You receive a shortlist of 3-5 candidates with deep performance data. You just make the final call.
+                    You receive a shortlist of 3-5 candidates with deep
+                    performance data. You just make the final call.
                   </p>
                 </CardContent>
               </Card>
@@ -630,7 +743,11 @@ export default function Index() {
           </div>
 
           <div className="text-center mt-16">
-            <Button variant="cta" onClick={scrollToForm} className="px-12 py-4 text-lg rounded-xl">
+            <Button
+              variant="cta"
+              onClick={scrollToForm}
+              className="px-12 py-4 text-lg rounded-xl"
+            >
               Start My Custom Process
             </Button>
           </div>
@@ -644,61 +761,104 @@ export default function Index() {
             <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
               Frequently Asked Questions
             </h2>
-            <p className="text-xl text-slate-600">Everything you need to know about our process</p>
+            <p className="text-xl text-slate-600">
+              Everything you need to know about our process
+            </p>
           </div>
 
           <Accordion type="single" collapsible className="space-y-6">
-            <AccordionItem value="item-1" className="border border-slate-200 rounded-2xl px-8 py-2 shadow-sm hover:shadow-md transition-shadow">
+            <AccordionItem
+              value="item-1"
+              className="border border-slate-200 rounded-2xl px-8 py-2 shadow-sm hover:shadow-md transition-shadow"
+            >
               <AccordionTrigger className="text-xl font-bold text-slate-900 py-8 hover:no-underline">
                 What is the "Parallel Validation" pilot program?
               </AccordionTrigger>
               <AccordionContent className="text-slate-600 pb-8 text-lg leading-relaxed">
-                It's our risk-free guarantee. We'll build a custom project and vet candidates for one of your open roles. You run your existing hiring process in parallel. You only pay our placement fee if you hire a candidate we sourced. We're confident that our shortlist will outperform your traditional methods, and we're willing to prove it.
+                It's our risk-free guarantee. We'll build a custom project and
+                vet candidates for one of your open roles. You run your existing
+                hiring process in parallel. You only pay our placement fee if
+                you hire a candidate we sourced. We're confident that our
+                shortlist will outperform your traditional methods, and we're
+                willing to prove it.
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-2" className="border border-slate-200 rounded-2xl px-8 py-2 shadow-sm hover:shadow-md transition-shadow">
+            <AccordionItem
+              value="item-2"
+              className="border border-slate-200 rounded-2xl px-8 py-2 shadow-sm hover:shadow-md transition-shadow"
+            >
               <AccordionTrigger className="text-xl font-bold text-slate-900 py-8 hover:no-underline">
                 What is your pricing model?
               </AccordionTrigger>
               <AccordionContent className="text-slate-600 pb-8 text-lg leading-relaxed">
-                We operate on a success-based model. We charge a placement fee of 8% of the candidate's first-year annual CTC, payable only upon a successful hire. There are no upfront costs to start the pilot program.
+                We operate on a success-based model. We charge a placement fee
+                of 8% of the candidate's first-year annual CTC, payable only
+                upon a successful hire. There are no upfront costs to start the
+                pilot program.
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-3" className="border border-slate-200 rounded-2xl px-8 py-2 shadow-sm hover:shadow-md transition-shadow">
+            <AccordionItem
+              value="item-3"
+              className="border border-slate-200 rounded-2xl px-8 py-2 shadow-sm hover:shadow-md transition-shadow"
+            >
               <AccordionTrigger className="text-xl font-bold text-slate-900 py-8 hover:no-underline">
                 How do you handle candidates using GenAI or Stack Overflow?
               </AccordionTrigger>
               <AccordionContent className="text-slate-600 pb-8 text-lg leading-relaxed">
-                We encourage it. Our philosophy is to test for real-world problem-solving, not rote memorization. In the real world, great developers use all the tools at their disposal. Our projects are complex enough that they can only be completed by someone who truly understands the subject, regardless of the tools they use. We see it as a sign of resourcefulness, not cheating.
+                We encourage it. Our philosophy is to test for real-world
+                problem-solving, not rote memorization. In the real world, great
+                developers use all the tools at their disposal. Our projects are
+                complex enough that they can only be completed by someone who
+                truly understands the subject, regardless of the tools they use.
+                We see it as a sign of resourcefulness, not cheating.
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-4" className="border border-slate-200 rounded-2xl px-8 py-2 shadow-sm hover:shadow-md transition-shadow">
+            <AccordionItem
+              value="item-4"
+              className="border border-slate-200 rounded-2xl px-8 py-2 shadow-sm hover:shadow-md transition-shadow"
+            >
               <AccordionTrigger className="text-xl font-bold text-slate-900 py-8 hover:no-underline">
                 What kind of roles are you best for?
               </AccordionTrigger>
               <AccordionContent className="text-slate-600 pb-8 text-lg leading-relaxed">
-                Our model is ideal for fresher and junior-level (0-2 years experience) technical roles where on-the-job learning ability and problem-solving skills are more critical than prior experience. This includes roles like Software Engineer, Backend/Frontend Developer, Data Analyst, and QA Engineer.
+                Our model is ideal for fresher and junior-level (0-2 years
+                experience) technical roles where on-the-job learning ability
+                and problem-solving skills are more critical than prior
+                experience. This includes roles like Software Engineer,
+                Backend/Frontend Developer, Data Analyst, and QA Engineer.
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-5" className="border border-slate-200 rounded-2xl px-8 py-2 shadow-sm hover:shadow-md transition-shadow">
+            <AccordionItem
+              value="item-5"
+              className="border border-slate-200 rounded-2xl px-8 py-2 shadow-sm hover:shadow-md transition-shadow"
+            >
               <AccordionTrigger className="text-xl font-bold text-slate-900 py-8 hover:no-underline">
                 How long does the vetting process take?
               </AccordionTrigger>
               <AccordionContent className="text-slate-600 pb-8 text-lg leading-relaxed">
-                Our comprehensive 45-day work simulation provides deep insights into candidate performance. While this may seem longer than traditional screening, it eliminates months of back-and-forth interviews and dramatically reduces the risk of bad hires.
+                Our comprehensive 45-day work simulation provides deep insights
+                into candidate performance. While this may seem longer than
+                traditional screening, it eliminates months of back-and-forth
+                interviews and dramatically reduces the risk of bad hires.
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-6" className="border border-slate-200 rounded-2xl px-8 py-2 shadow-sm hover:shadow-md transition-shadow">
+            <AccordionItem
+              value="item-6"
+              className="border border-slate-200 rounded-2xl px-8 py-2 shadow-sm hover:shadow-md transition-shadow"
+            >
               <AccordionTrigger className="text-xl font-bold text-slate-900 py-8 hover:no-underline">
                 What if we're not satisfied with the candidates?
               </AccordionTrigger>
               <AccordionContent className="text-slate-600 pb-8 text-lg leading-relaxed">
-                That's the beauty of our Parallel Validation program. If our candidates don't meet your standards, you don't pay anything. We only succeed when you succeed, which is why we're committed to delivering exceptional talent.
+                That's the beauty of our Parallel Validation program. If our
+                candidates don't meet your standards, you don't pay anything. We
+                only succeed when you succeed, which is why we're committed to
+                delivering exceptional talent.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
@@ -714,9 +874,16 @@ export default function Index() {
                 Stop Wasting Time on Bad Hires
               </h2>
               <p className="text-xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed">
-                Your next top performer is waiting in a Tier-2 city, ready to prove their skills. Let us find them for you. Start a risk-free pilot today and get a shortlist of proven candidates in weeks, not months.
+                Your next top performer is waiting in a Tier-2 city, ready to
+                prove their skills. Let us find them for you. Start a risk-free
+                pilot today and get a shortlist of proven candidates in weeks,
+                not months.
               </p>
-              <Button variant="cta" onClick={scrollToForm} className="px-12 py-6 text-lg rounded-xl">
+              <Button
+                variant="cta"
+                onClick={scrollToForm}
+                className="px-12 py-6 text-lg rounded-xl"
+              >
                 Claim My Risk-Free Pilot
               </Button>
             </div>
@@ -737,32 +904,53 @@ export default function Index() {
                 />
               </div>
               <p className="text-slate-600 max-w-md leading-relaxed mb-6">
-                Transforming how companies hire technical talent through proven performance validation.
+                Transforming how companies hire technical talent through proven
+                performance validation.
               </p>
-              
+
               <address className="not-italic text-sm text-slate-600 mb-4">
-                  Broskieshub, ACIC-KIF, KARE, Central Library 2nd Floor, Anand Nagar, Krishnan Koil, S.Ramachandrapuram, Virudhunagar, Srivilliputhur, Tamil Nadu, India 626126
+                Broskieshub, ACIC-KIF, KARE, Central Library 2nd Floor, Anand
+                Nagar, Krishnan Koil, S.Ramachandrapuram, Virudhunagar,
+                Srivilliputhur, Tamil Nadu, India 626126
               </address>
-              <p className="text-sm text-slate-500">© 2025 BroskiesHub Technologies Pvt. Ltd. All rights reserved.</p>
+              <p className="text-sm text-slate-500">
+                © 2025 BroskiesHub Technologies Pvt. Ltd. All rights reserved.
+              </p>
             </div>
 
             <div>
               <h3 className="font-bold text-slate-900 mb-4">Company</h3>
               <ul className="space-y-2 text-slate-600">
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">How It Works</a></li>
-                <li><a href="#">Success Stories</a></li>
-                <li><a href="#">Careers</a></li>
+                <li>
+                  <a href="#">About Us</a>
+                </li>
+                <li>
+                  <a href="#">How It Works</a>
+                </li>
+                <li>
+                  <a href="#">Success Stories</a>
+                </li>
+                <li>
+                  <a href="#">Careers</a>
+                </li>
               </ul>
             </div>
 
             <div>
               <h3 className="font-bold text-slate-900 mb-4">Resources</h3>
               <ul className="space-y-2 text-slate-600">
-                <li><a href="#">For Job Seekers</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms of Service</a></li>
-                <li><a href="#">Contact</a></li>
+                <li>
+                  <a href="#">For Job Seekers</a>
+                </li>
+                <li>
+                  <a href="#">Privacy Policy</a>
+                </li>
+                <li>
+                  <a href="#">Terms of Service</a>
+                </li>
+                <li>
+                  <a href="#">Contact</a>
+                </li>
               </ul>
             </div>
           </div>
@@ -772,8 +960,18 @@ export default function Index() {
               <div className="flex items-center gap-4 mb-4 md:mb-0">
                 <span className="text-slate-600">Connect with us:</span>
                 <div className="flex gap-3">
-                  <a href="#" className="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center hover:bg-[#2626e7] hover:text-white transition-all">in</a>
-                  <a href="#" className="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center hover:bg-[#2626e7] hover:text-white transition-all">tw</a>
+                  <a
+                    href="#"
+                    className="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center hover:bg-[#2626e7] hover:text-white transition-all"
+                  >
+                    in
+                  </a>
+                  <a
+                    href="#"
+                    className="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center hover:bg-[#2626e7] hover:text-white transition-all"
+                  >
+                    tw
+                  </a>
                 </div>
               </div>
             </div>
