@@ -481,6 +481,21 @@
     animation: shimmer 6s linear infinite;
   }
 
+  /* Gradient colour flow for headings */
+  @keyframes gradient-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  .gradient-flow {
+    background: linear-gradient(90deg, #2626e7 0%, #4b4bff 40%, #8c78ff 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-flow 8s ease-in-out infinite;
+  }
+
   /* Subtle floating ornament for hero */
   @keyframes float-slow { 0% { transform: translateY(0px);} 50% { transform: translateY(-16px);} 100% { transform: translateY(0px);} }
   .float-slow { animation: float-slow 8s ease-in-out infinite; }
