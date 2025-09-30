@@ -21,7 +21,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 240 80% 53%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 210 40% 96.1%;
@@ -38,7 +38,7 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 240 80% 53%;
 
     --radius: 0.5rem;
 
@@ -365,5 +365,68 @@
     background: white;
     border-radius: 10px;
     z-index: -1;
+  }
+
+  /* Brand theme helpers */
+  a {
+    color: #2626e7;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #4b4bff;
+    text-decoration: underline;
+  }
+  .bg-brand-gradient {
+    background: linear-gradient(90deg, #2626e7, #4b4bff);
+  }
+  .text-brand {
+    color: #2626e7;
+  }
+  .border-brand {
+    border-color: #2626e7;
+  }
+
+  /* Marquee animation for logos */
+  @keyframes marquee-ltr {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  .marquee {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+  .marquee-track {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    will-change: transform;
+    animation: marquee-ltr 60s linear infinite;
+  }
+  .marquee:hover .marquee-track {
+    animation-play-state: paused;
+  }
+
+  /* Brand pulse glow */
+  @keyframes brand-pulse {
+    0%, 100% {
+      box-shadow:
+        0 0 20px hsla(var(--primary), 0.25),
+        0 0 60px hsla(var(--primary), 0.15),
+        0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+    50% {
+      box-shadow:
+        0 0 40px hsla(var(--primary), 0.45),
+        0 0 90px hsla(var(--primary), 0.25),
+        0 15px 40px rgba(0, 0, 0, 0.12);
+    }
+  }
+  .animate-brand-pulse {
+    animation: brand-pulse 2.6s ease-in-out infinite;
   }
 }
