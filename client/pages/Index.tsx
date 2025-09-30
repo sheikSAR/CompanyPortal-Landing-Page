@@ -427,7 +427,7 @@ export default function Index() {
               <div className="relative">
                 <div className="absolute inset-0 bg-brand-gradient rounded-3xl transform -rotate-3 opacity-20"></div>
                 <img
-                  src="https://res.cloudinary.com/dk2wudmxh/image/upload/v1759252503/C-herSec1_1_revi4m.png"
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
                   alt="Custom talent pipeline"
                   className="relative rounded-3xl shadow-2xl hover:shadow-3xl transition-shadow duration-500 transform hover:scale-105"
                 />
