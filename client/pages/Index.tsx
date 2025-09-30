@@ -880,14 +880,7 @@ export default function Index() {
                 pilot today and get a shortlist of proven candidates in weeks,
                 not months.
               </p>
-              <Button
-              variant="cta"
-              onClick={scrollToForm}
-              className="px-12 py-6 text-lg rounded-xl bg-white text-[#2626e7] font-semibold shadow-md hover:bg-[#2626e7] hover:text-white transition-all duration-300"
-            >
-              Claim My Risk-Free Pilot
-            </Button>
-
+              <Button variant="cta" onClick={scrollToForm} className="px-12 py-6 text-lg rounded-xl" > Claim My Risk-Free Pilot </Button>
             </div>
           </div>
         </div>
