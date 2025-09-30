@@ -757,7 +757,7 @@ export default function Index() {
               <p className="text-xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed">
                 Your next top performer is waiting in a Tier-2 city, ready to prove their skills. Let us find them for you. Start a risk-free pilot today and get a shortlist of proven candidates in weeks, not months.
               </p>
-              <Button variant="cta" onClick={scrollToForm} className="bg-white text-[#2626e7] hover:text-[#2626e7] px-12 py-6 text-lg rounded-xl">
+              <Button variant="cta" onClick={scrollToForm} className="px-12 py-6 text-lg rounded-xl">
                 Claim My Risk-Free Pilot
               </Button>
             </div>
