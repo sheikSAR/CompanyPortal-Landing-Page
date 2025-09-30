@@ -589,7 +589,7 @@ export default function Index() {
                     </tr>
                     <tr className="hover:bg-slate-50 transition-colors duration-200">
                       <td className="p-6 font-semibold text-slate-900">Engineering Time Saved</td>
-                      <td className="p-6 text-center text-slate-900 font-bold text-lg">> 80%</td>
+                      <td className="p-6 text-center text-slate-900 font-bold text-lg">&gt; 80%</td>
                       <td className="p-6 text-center">~ 20%</td>
                       <td className="p-6 text-center">0%</td>
                       <td className="p-6 text-center">~ 50%</td>
