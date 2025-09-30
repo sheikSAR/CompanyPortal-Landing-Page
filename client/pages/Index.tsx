@@ -776,7 +776,6 @@ export default function Index() {
                   alt="BroskiesHub"
                   className="h-10 w-auto object-contain"
                 />
-                <span className="text-2xl font-bold text-slate-900">BroskiesHub</span>
               </div>
               <p className="text-slate-600 max-w-md leading-relaxed mb-6">
                 Transforming how companies hire technical talent through proven performance validation.
