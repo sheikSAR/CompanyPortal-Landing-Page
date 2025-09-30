@@ -258,7 +258,8 @@
   .btn-premium {
     position: relative;
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: translateY(0);
   }
 
   .btn-premium::before {
@@ -271,19 +272,61 @@
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.3),
       transparent
     );
-    transition: left 0.5s;
+    transition: left 0.6s ease;
   }
 
   .btn-premium:hover::before {
     left: 100%;
   }
 
+  .btn-premium:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .btn-premium:active {
+    transform: translateY(0);
+    transition: transform 0.1s ease;
+  }
+
   /* Enhanced focus states */
   .focus-ring:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(138, 49, 255, 0.2);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+  }
+
+  /* Card hover effects */
+  .card-hover {
+    transition: all 0.3s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Smooth transitions for all interactive elements */
+  .smooth-transition {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Gradient borders */
+  .gradient-border {
+    position: relative;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 12px;
+    padding: 2px;
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: white;
+    border-radius: 10px;
+    z-index: -1;
   }
 }
