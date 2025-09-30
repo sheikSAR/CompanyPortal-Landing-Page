@@ -881,12 +881,13 @@ export default function Index() {
                 not months.
               </p>
               <Button
-                variant="cta"
-                onClick={scrollToForm}
-                className="px-12 py-6 text-lg rounded-xl"
-              >
-                Claim My Risk-Free Pilot
-              </Button>
+              variant="cta"
+              onClick={scrollToForm}
+              className="px-12 py-6 text-lg rounded-xl bg-white text-[#2626e7] font-semibold shadow-md hover:bg-[#2626e7] hover:text-white transition-all duration-300"
+            >
+              Claim My Risk-Free Pilot
+            </Button>
+
             </div>
           </div>
         </div>
@@ -915,7 +916,7 @@ export default function Index() {
                 Srivilliputhur, Tamil Nadu, India 626126
               </address>
               <p className="text-sm text-slate-500">
-                © 2025 BroskiesHub Technologies Pvt. Ltd. All rights reserved.
+                © 2025 BroskiesHub. All rights reserved.
               </p>
             </div>
 
