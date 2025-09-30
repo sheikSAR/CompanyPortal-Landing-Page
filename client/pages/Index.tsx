@@ -739,6 +739,7 @@ export default function Index() {
               <p className="text-slate-600 max-w-md leading-relaxed mb-6">
                 Transforming how companies hire technical talent through proven performance validation.
               </p>
+              <MapPin className="w-4 h-4 text-[#2626e7]" />
               <address className="not-italic text-sm text-slate-600 mb-4">
                 Broskieshub, ACIC-KIF, KARE, Central Library 2nd Floor, Anand Nagar, Krishnan Koil, S.Ramachandrapuram, Virudhunagar, Srivilliputhur, Tamil Nadu, India 626126
               </address>
