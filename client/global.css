@@ -389,10 +389,10 @@
   /* Marquee animation for logos */
   @keyframes marquee-ltr {
     0% {
-      transform: translateX(-50%);
+      transform: translateX(0);
     }
     100% {
-      transform: translateX(0);
+      transform: translateX(-50%);
     }
   }
   .marquee {
@@ -405,25 +405,47 @@
     gap: 2rem;
     align-items: center;
     will-change: transform;
-    animation: marquee-ltr 60s linear infinite;
+    min-width: max-content;
+    animation: marquee-ltr 50s linear infinite;
   }
   .marquee:hover .marquee-track {
     animation-play-state: paused;
+  }
+
+  /* individual marquee items */
+  .marquee-track .marquee-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 64px;
+  }
+  .marquee-track .marquee-item img {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: transform 300ms ease, filter 300ms ease, box-shadow 300ms ease;
+  }
+  .marquee-track .marquee-item img:hover,
+  .marquee-track .marquee-item:hover img {
+    transform: scale(1.08);
+    filter: grayscale(0%);
+    box-shadow: 0 8px 30px rgba(37,38,231,0.18);
   }
 
   /* Brand pulse glow */
   @keyframes brand-pulse {
     0%, 100% {
       box-shadow:
-        0 0 20px hsla(var(--primary), 0.25),
-        0 0 60px hsla(var(--primary), 0.15),
-        0 10px 30px rgba(0, 0, 0, 0.08);
+        0 0 20px rgba(38,38,231,0.18),
+        0 0 60px rgba(75,75,255,0.12),
+        0 10px 30px rgba(0, 0, 0, 0.06);
     }
     50% {
       box-shadow:
-        0 0 40px hsla(var(--primary), 0.45),
-        0 0 90px hsla(var(--primary), 0.25),
-        0 15px 40px rgba(0, 0, 0, 0.12);
+        0 0 40px rgba(38,38,231,0.28),
+        0 0 90px rgba(75,75,255,0.18),
+        0 15px 40px rgba(0, 0, 0, 0.10);
     }
   }
   .animate-brand-pulse {
