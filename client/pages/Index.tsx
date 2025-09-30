@@ -776,10 +776,6 @@ export default function Index() {
                   <a href="#" className="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center hover:bg-[#2626e7] hover:text-white transition-all">tw</a>
                 </div>
               </div>
-              <div className="flex items-center gap-4 text-slate-600">
-                <MapPin className="w-4 h-4 text-[#2626e7]" />
-                <span className="text-sm">Bangalore, India</span>
-              </div>
             </div>
           </div>
         </div>
