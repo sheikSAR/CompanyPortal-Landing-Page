@@ -113,29 +113,60 @@
 
   /* Premium UI Styles */
   .gradient-text {
-    background: linear-gradient(90deg, #8a31ff, #3b82f6);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .glass-effect {
-    background: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+
+  .glass-effect-dark {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   }
 
   .shadow-glow {
-    box-shadow: 0 0 30px rgba(138, 49, 255, 0.2);
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.3);
   }
 
   .shadow-glow-hover:hover {
-    box-shadow: 0 0 40px rgba(138, 49, 255, 0.4);
-    transition: box-shadow 0.3s ease;
+    box-shadow: 0 0 60px rgba(99, 102, 241, 0.5);
+    transition: box-shadow 0.4s ease;
   }
 
   .text-shadow {
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .text-shadow-light {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  }
+
+  /* Neumorphism effects */
+  .neomorphism {
+    background: #f8fafc;
+    box-shadow:
+      20px 20px 40px rgba(0, 0, 0, 0.1),
+      -20px -20px 40px rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+  }
+
+  .neomorphism-inset {
+    background: #f8fafc;
+    box-shadow:
+      inset 10px 10px 20px rgba(0, 0, 0, 0.1),
+      inset -10px -10px 20px rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
   }
 
   /* Enhanced scroll reveal animations */
