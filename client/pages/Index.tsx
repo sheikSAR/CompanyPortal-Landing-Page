@@ -282,7 +282,7 @@ export default function Index() {
       <section className="py-16 bg-white scroll-reveal">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-slate-600 font-semibold text-lg mb-6 uppercase tracking-wide">
-            TRUSTED BY TALENT FROM TOP UNIVERSITIES
+            Where Top University Talent Comes to Prove Their Skill
           </p>
           <div className="marquee group">
             <div className="marquee-track">
