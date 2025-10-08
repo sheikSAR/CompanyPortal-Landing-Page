@@ -233,37 +233,37 @@ export default function Index() {
             <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
                                     <defs>
                                         <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                                            <stop offset="0%" style="stop-color:#C7D2FE;stop-opacity:1" />
-                                            <stop offset="100%" style="stop-color:#E0E7FF;stop-opacity:1" />
+                                            <stop offset="0%" style={{stopColor: "#C7D2FE", stopOpacity: 1}} />
+                                            <stop offset="100%" style={{stopColor: "#E0E7FF", stopOpacity: 1}} />
                                         </linearGradient>
                                         <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
-                                            <stop offset="0%" style="stop-color:#4F46E5;stop-opacity:1" />
-                                            <stop offset="100%" style="stop-color:#1D9BF0;stop-opacity:1" />
+                                            <stop offset="0%" style={{stopColor: "#4F46E5", stopOpacity: 1}} />
+                                            <stop offset="100%" style={{stopColor: "#1D9BF0", stopOpacity: 1}} />
                                         </linearGradient>
                                     </defs>
-                                    <!-- Background shape -->
+                                    {/* Background shape */}
                                     <path d="M50,50 Q250,-50 450,50 T450,350 Q250,450 50,350 T50,50 Z" fill="url(#grad1)" />
-                                    
-                                    <!-- Chaotic resumes on left -->
+
+                                    {/* Chaotic resumes on left */}
                                     <rect x="60" y="150" width="80" height="10" fill="#A5B4FC" rx="2" transform="rotate(-15 100 155)"/>
                                     <rect x="80" y="180" width="90" height="10" fill="#A5B4FC" rx="2" transform="rotate(10 125 185)"/>
                                     <rect x="70" y="220" width="70" height="10" fill="#A5B4FC" rx="2" transform="rotate(-5 105 225)"/>
 
-                                    <!-- BroskiesHub processor in middle -->
+                                    {/* BroskiesHub processor in middle */}
                                     <rect x="200" y="150" width="100" height="100" fill="url(#grad2)" rx="15" />
-                                    <path d="M220 180 l15 15 l30 -30" stroke="white" stroke-width="5" fill="none" stroke-linecap="round"/>
+                                    <path d="M220 180 l15 15 l30 -30" stroke="white" strokeWidth="5" fill="none" strokeLinecap="round"/>
 
-                                    <!-- Arrows showing flow -->
-                                    <path d="M160 200 Q180 200 200 200" stroke="#6366F1" stroke-width="3" fill="none" stroke-dasharray="5,5"/>
-                                    <path d="M195 195 L200 200 L195 205" stroke="#6366F1" stroke-width="3" fill="none" />
-                                    <path d="M300 200 Q320 200 340 200" stroke="#6366F1" stroke-width="3" fill="none" stroke-dasharray="5,5"/>
-                                     <path d="M335 195 L340 200 L335 205" stroke="#6366F1" stroke-width="3" fill="none" />
+                                    {/* Arrows showing flow */}
+                                    <path d="M160 200 Q180 200 200 200" stroke="#6366F1" strokeWidth="3" fill="none" strokeDasharray="5,5"/>
+                                    <path d="M195 195 L200 200 L195 205" stroke="#6366F1" strokeWidth="3" fill="none" />
+                                    <path d="M300 200 Q320 200 340 200" stroke="#6366F1" strokeWidth="3" fill="none" strokeDasharray="5,5"/>
+                                    <path d="M335 195 L340 200 L335 205" stroke="#6366F1" strokeWidth="3" fill="none" />
 
-                                    <!-- Structured profiles on right -->
+                                    {/* Structured profiles on right */}
                                     <rect x="350" y="160" width="100" height="25" fill="#FFFFFF" rx="5" stroke="#E0E7FF"/>
                                     <circle cx="362" cy="172.5" r="5" fill="#10B981" />
                                     <rect x="372" y="170" width="40" height="5" fill="#C7D2FE" rx="2"/>
-                                    
+
                                     <rect x="350" y="195" width="100" height="25" fill="#FFFFFF" rx="5" stroke="#E0E7FF"/>
                                     <circle cx="362" cy="207.5" r="5" fill="#10B981" />
                                     <rect x="372" y="205" width="50" height="5" fill="#C7D2FE" rx="2"/>
