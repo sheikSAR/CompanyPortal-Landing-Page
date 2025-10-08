@@ -55,22 +55,11 @@ export default function Index() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-  };
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
-  };
-
-  const scrollToForm = () => {
-    document
-      .getElementById("hero-form")
-      ?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   const universityLogos: string[] = [
@@ -241,99 +230,6 @@ export default function Index() {
                 pipeline.
               </p>
             </div>
-
-            {/* Right - Lead Capture Form */}
-            <div>
-              <Card className="max-w-lg mx-auto bg-white border border-slate-200 shadow-2xl rounded-2xl">
-                <CardHeader className="text-center py-8">
-                  <CardTitle className="text-2xl font-bold text-slate-900 mb-2">
-                    Start Your Risk-Free Pilot
-                  </CardTitle>
-                  <CardDescription className="text-slate-600">
-                    Join innovative companies already transforming their hiring
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="px-8 pb-8">
-                  <form
-                    id="hero-form"
-                    onSubmit={handleSubmit}
-                    className="space-y-6"
-                  >
-                    <div className="space-y-4">
-                      <div>
-                        <label
-                          htmlFor="name"
-                          className="block text-sm font-medium text-slate-700 mb-2"
-                        >
-                          Full Name
-                        </label>
-                        <div className="relative">
-                          <User className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5" />
-                          <Input
-                            type="text"
-                            name="name"
-                            id="name"
-                            required
-                            value={formData.name}
-                            onChange={handleInputChange}
-                            className="pl-12"
-                            placeholder="Enter your full name"
-                          />
-                        </div>
-                      </div>
-
-                      <div>
-                        <label
-                          htmlFor="email"
-                          className="block text-sm font-medium text-slate-700 mb-2"
-                        >
-                          Work Email
-                        </label>
-                        <div className="relative">
-                          <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5" />
-                          <Input
-                            type="email"
-                            name="email"
-                            id="email"
-                            required
-                            value={formData.email}
-                            onChange={handleInputChange}
-                            className="pl-12"
-                            placeholder="you@company.com"
-                          />
-                        </div>
-                      </div>
-
-                      <div>
-                        <label
-                          htmlFor="company"
-                          className="block text-sm font-medium text-slate-700 mb-2"
-                        >
-                          Company
-                        </label>
-                        <div className="relative">
-                          <Building className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5" />
-                          <Input
-                            type="text"
-                            name="company"
-                            id="company"
-                            required
-                            value={formData.company}
-                            onChange={handleInputChange}
-                            className="pl-12"
-                            placeholder="Your company name"
-                          />
-                        </div>
-                      </div>
-                    </div>
-
-                    <Button type="submit" className="w-full" variant="cta">
-                      Request My Free Pilot
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
-            </div>
           </div>
         </div>
       </section>
@@ -403,7 +299,7 @@ export default function Index() {
 
               <Button
                 variant="cta"
-                onClick={scrollToForm}
+                onClick={() => window.open('https://hire.broskieshub.com/', '_blank', 'noopener,noreferrer')
                 className="px-10 py-4 text-lg rounded-xl"
               >
                 Fix My Hiring Process
@@ -472,7 +368,7 @@ export default function Index() {
           <div className="text-center">
             <Button
               variant="cta"
-              onClick={scrollToForm}
+              onClick={() => window.open('https://hire.broskieshub.com/', '_blank', 'noopener,noreferrer')
               className="px-12 py-4 text-lg rounded-xl"
             >
               See Our Success Stories
@@ -511,7 +407,7 @@ export default function Index() {
               </p>
               <Button
                 variant="cta"
-                onClick={scrollToForm}
+                onClick={() => window.open('https://hire.broskieshub.com/', '_blank', 'noopener,noreferrer')
                 className="px-10 py-4 rounded-xl"
               >
                 Build My Pipeline
@@ -536,7 +432,7 @@ export default function Index() {
               </p>
               <Button
                 variant="cta"
-                onClick={scrollToForm}
+                onClick={() => window.open('https://hire.broskieshub.com/', '_blank', 'noopener,noreferrer')
                 className="px-10 py-4 rounded-xl"
               >
                 See Sample Report
@@ -551,7 +447,7 @@ export default function Index() {
                   Request a sample candidate report to see the depth of our
                   performance insights and Skill Passports.
                 </p>
-                <Button variant="cta" onClick={scrollToForm}>
+                <Button variant="cta" onClick={() => window.open('https://hire.broskieshub.com/', '_blank', 'noopener,noreferrer')>
                   Request Sample
                 </Button>
               </Card>
@@ -751,7 +647,7 @@ export default function Index() {
           <div className="text-center mt-16">
             <Button
               variant="cta"
-              onClick={scrollToForm}
+              onClick={() => window.open('https://hire.broskieshub.com/', '_blank', 'noopener,noreferrer')
               className="px-12 py-4 text-lg rounded-xl"
             >
               Start My Custom Process
