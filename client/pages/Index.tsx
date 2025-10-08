@@ -305,6 +305,22 @@ export default function Index() {
               ))}
             </div>
           </div>
+
+          {/* Secondary marquee (reverse direction) */}
+          <div className="marquee group mt-6 marquee-two">
+            <div className="marquee-track reverse">
+              {[...universityLogos].reverse().concat([...universityLogos]).map((logo, index) => (
+                <div key={`bottom-${index}`} className="flex justify-center items-center h-16 px-4">
+                  <img
+                    src={logo}
+                    alt={`University alt ${index + 1}`}
+                    className="h-12 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 group-hover:scale-105 hover:drop-shadow-md"
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
