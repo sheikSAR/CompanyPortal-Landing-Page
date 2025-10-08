@@ -782,7 +782,7 @@ export default function Index() {
             <p className="text-indigo-100 max-w-3xl mx-auto mb-8 text-lg z-10 relative">
               Your next top performer is waiting in a Tier-2 city, ready to prove their skills. Let us find them for you. Start a risk-free pilot today and get a shortlist of proven candidates in weeks, not months.
             </p>
-            <a href="#" className="bg-white text-indigo-600 font-bold py-4 px-10 rounded-lg text-lg transition-all hover:scale-105 inline-block hover:bg-gray-200 shadow-lg z-10 relative">Claim My Risk-Free Pilot</a>
+            <a href="https://hire.broskieshub.com/" target="_blank" rel="noopener noreferrer" className="bg-white text-indigo-600 font-bold py-4 px-10 rounded-lg text-lg transition-all hover:scale-105 inline-block hover:bg-gray-200 shadow-lg z-10 relative">Claim My Risk-Free Pilot</a>
           </div>
         </div>
       </section>
