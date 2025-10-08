@@ -917,15 +917,17 @@ export default function Index() {
                 <div className="flex gap-3">
                   <a
                     href="#"
+                    aria-label="LinkedIn"
                     className="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center hover:bg-[#2626e7] hover:text-white transition-all"
                   >
-                    in
+                    <Linkedin className="w-4 h-4" />
                   </a>
                   <a
                     href="#"
+                    aria-label="Twitter"
                     className="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center hover:bg-[#2626e7] hover:text-white transition-all"
                   >
-                    tw
+                    <Twitter className="w-4 h-4" />
                   </a>
                 </div>
               </div>
