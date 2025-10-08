@@ -511,7 +511,7 @@ export default function Index() {
                   Request a sample candidate report to see the depth of our
                   performance insights and Skill Passports.
                 </p>
-                <Button variant="cta" onClick={() => window.open('https://hire.broskieshub.com/', '_blank', 'noopener,noreferrer')}>
+                <Button variant="cta" onClick={() => window.open('https://hire.broskieshub.com/', '_blank', 'noopener,noreferrer')} className="btn-premium">
                   Request Sample
                 </Button>
               </Card>
