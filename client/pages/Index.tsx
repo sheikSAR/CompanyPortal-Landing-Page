@@ -867,21 +867,35 @@ export default function Index() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-24 bg-[linear-gradient(135deg,#2626e7,#4b4bff)] scroll-reveal">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="relative">
-            <div className="relative bg-white/10 backdrop-blur-xl rounded-3xl p-12 border border-white/20">
-              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-8">
-                Stop Wasting Time on Bad Hires
-              </h2>
-              <p className="text-xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed">
-                Your next top performer is waiting in a Tier-2 city, ready to
-                prove their skills. Let us find them for you. Start a risk-free
-                pilot today and get a shortlist of proven candidates in weeks,
-                not months.
-              </p>
-              <Button variant="cta" onClick={scrollToForm} className="px-12 py-6 text-lg rounded-xl" > Claim My Risk-Free Pilot </Button>
-            </div>
+      // <section className="py-24 bg-[linear-gradient(135deg,#2626e7,#4b4bff)] scroll-reveal">
+      //   <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      //     <div className="relative">
+      //       <div className="relative bg-white/10 backdrop-blur-xl rounded-3xl p-12 border border-white/20">
+      //         <h2 className="text-4xl lg:text-5xl font-bold text-white mb-8">
+      //           Stop Wasting Time on Bad Hires
+      //         </h2>
+      //         <p className="text-xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed">
+      //           Your next top performer is waiting in a Tier-2 city, ready to
+      //           prove their skills. Let us find them for you. Start a risk-free
+      //           pilot today and get a shortlist of proven candidates in weeks,
+      //           not months.
+      //         </p>
+      //         <Button variant="cta" onClick={scrollToForm} className="px-12 py-6 text-lg rounded-xl" > Claim My Risk-Free Pilot </Button>
+      //       </div>
+      //     </div>
+      //   </div>
+      // </section>
+
+      <!-- Final CTA Section -->
+      <section id="final-cta" class="py-20 md:py-24 bg-white">
+        <div class="container mx-auto px-6">
+          <div class="bg-indigo-600 rounded-2xl p-10 md:p-16 text-center shadow-2xl bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-600 to-indigo-800 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-full opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23ffffff%22 fill-opacity=%220.4%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4 z-10 relative">Stop Wasting Time on Bad Hires</h2>
+            <p class="text-indigo-100 max-w-3xl mx-auto mb-8 text-lg z-10 relative">
+              Your next top performer is waiting in a Tier-2 city, ready to prove their skills. Let us find them for you. Start a risk-free pilot today and get a shortlist of proven candidates in weeks, not months.
+            </p>
+            <a href="#" class="bg-white text-indigo-600 font-bold py-4 px-10 rounded-lg text-lg transition-all hover:scale-105 inline-block hover:bg-gray-200 shadow-lg z-10 relative">Claim My Risk-Free Pilot</a>
           </div>
         </div>
       </section>
