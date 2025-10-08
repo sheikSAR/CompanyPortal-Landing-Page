@@ -867,26 +867,6 @@ export default function Index() {
       </section>
 
       {/* Final CTA Section */}
-      // <section className="py-24 bg-[linear-gradient(135deg,#2626e7,#4b4bff)] scroll-reveal">
-      //   <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      //     <div className="relative">
-      //       <div className="relative bg-white/10 backdrop-blur-xl rounded-3xl p-12 border border-white/20">
-      //         <h2 className="text-4xl lg:text-5xl font-bold text-white mb-8">
-      //           Stop Wasting Time on Bad Hires
-      //         </h2>
-      //         <p className="text-xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed">
-      //           Your next top performer is waiting in a Tier-2 city, ready to
-      //           prove their skills. Let us find them for you. Start a risk-free
-      //           pilot today and get a shortlist of proven candidates in weeks,
-      //           not months.
-      //         </p>
-      //         <Button variant="cta" onClick={scrollToForm} className="px-12 py-6 text-lg rounded-xl" > Claim My Risk-Free Pilot </Button>
-      //       </div>
-      //     </div>
-      //   </div>
-      // </section>
-
-      <!-- Final CTA Section -->
       <section id="final-cta" class="py-20 md:py-24 bg-white">
         <div class="container mx-auto px-6">
           <div class="bg-indigo-600 rounded-2xl p-10 md:p-16 text-center shadow-2xl bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-600 to-indigo-800 relative overflow-hidden">
