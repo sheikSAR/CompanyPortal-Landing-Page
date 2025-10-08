@@ -299,7 +299,7 @@ export default function Index() {
 
               <Button
                 variant="cta"
-                onClick={() => window.open('https://hire.broskieshub.com/', '_blank', 'noopener,noreferrer')
+                onClick={() => window.open('https://hire.broskieshub.com/', '_blank', 'noopener,noreferrer')}
                 className="px-10 py-4 text-lg rounded-xl"
               >
                 Fix My Hiring Process
@@ -368,7 +368,7 @@ export default function Index() {
           <div className="text-center">
             <Button
               variant="cta"
-              onClick={() => window.open('https://hire.broskieshub.com/', '_blank', 'noopener,noreferrer')
+              onClick={() => window.open('https://hire.broskieshub.com/', '_blank', 'noopener,noreferrer')}
               className="px-12 py-4 text-lg rounded-xl"
             >
               See Our Success Stories
@@ -407,7 +407,7 @@ export default function Index() {
               </p>
               <Button
                 variant="cta"
-                onClick={() => window.open('https://hire.broskieshub.com/', '_blank', 'noopener,noreferrer')
+                onClick={() => window.open('https://hire.broskieshub.com/', '_blank', 'noopener,noreferrer')}
                 className="px-10 py-4 rounded-xl"
               >
                 Build My Pipeline
@@ -432,7 +432,7 @@ export default function Index() {
               </p>
               <Button
                 variant="cta"
-                onClick={() => window.open('https://hire.broskieshub.com/', '_blank', 'noopener,noreferrer')
+                onClick={() => window.open('https://hire.broskieshub.com/', '_blank', 'noopener,noreferrer')}
                 className="px-10 py-4 rounded-xl"
               >
                 See Sample Report
@@ -447,7 +447,7 @@ export default function Index() {
                   Request a sample candidate report to see the depth of our
                   performance insights and Skill Passports.
                 </p>
-                <Button variant="cta" onClick={() => window.open('https://hire.broskieshub.com/', '_blank', 'noopener,noreferrer')>
+                <Button variant="cta" onClick={() => window.open('https://hire.broskieshub.com/', '_blank', 'noopener,noreferrer')}>
                   Request Sample
                 </Button>
               </Card>
@@ -647,7 +647,7 @@ export default function Index() {
           <div className="text-center mt-16">
             <Button
               variant="cta"
-              onClick={() => window.open('https://hire.broskieshub.com/', '_blank', 'noopener,noreferrer')
+              onClick={() => window.open('https://hire.broskieshub.com/', '_blank', 'noopener,noreferrer')}
               className="px-12 py-4 text-lg rounded-xl"
             >
               Start My Custom Process
