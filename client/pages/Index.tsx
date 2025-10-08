@@ -858,7 +858,7 @@ export default function Index() {
               </p>
             </div>
 
-            <!-- Quick Links -->
+            {/* Quick Links */}
                 <div class="lg:col-span-2">
                     <h3 class="font-bold text-gray-900 mb-4">Quick Links</h3>
                     <ul class="space-y-3">
@@ -870,7 +870,7 @@ export default function Index() {
                     </ul>
                 </div>
 
-            <!-- Contact -->
+            {/* Contact */}
                 <div class="lg:col-span-3">
                     <h3 class="font-bold text-gray-900 mb-4">Contact</h3>
                     <ul class="space-y-3 text-sm">
