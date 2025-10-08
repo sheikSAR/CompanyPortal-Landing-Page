@@ -858,41 +858,36 @@ export default function Index() {
               </p>
             </div>
 
-            <div>
-              <h3 className="font-bold text-slate-900 mb-4">Company</h3>
-              <ul className="space-y-2 text-slate-600">
-                <li>
-                  <a href="#">About Us</a>
-                </li>
-                <li>
-                  <a href="#">How It Works</a>
-                </li>
-                <li>
-                  <a href="#">Success Stories</a>
-                </li>
-                <li>
-                  <a href="#">Careers</a>
-                </li>
-              </ul>
-            </div>
+            <!-- Quick Links -->
+                <div class="lg:col-span-2">
+                    <h3 class="font-bold text-gray-900 mb-4">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-indigo-600 transition-colors">For Companies</a></li>
+                        <li><a href="#" class="hover:text-indigo-600 transition-colors">For Job Seekers</a></li>
+                        <li><a href="#" class="hover:text-indigo-600 transition-colors">Features</a></li>
+                        <li><a href="#" class="hover:text-indigo-600 transition-colors">Stories</a></li>
+                        <li><a href="#faq" class="hover:text-indigo-600 transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
 
-            <div>
-              <h3 className="font-bold text-slate-900 mb-4">Resources</h3>
-              <ul className="space-y-2 text-slate-600">
-                <li>
-                  <a href="#">For Job Seekers</a>
-                </li>
-                <li>
-                  <a href="#">Privacy Policy</a>
-                </li>
-                <li>
-                  <a href="#">Terms of Service</a>
-                </li>
-                <li>
-                  <a href="#">Contact</a>
-                </li>
-              </ul>
-            </div>
+            <!-- Contact -->
+                <div class="lg:col-span-3">
+                    <h3 class="font-bold text-gray-900 mb-4">Contact</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-center">
+                           <svg class="w-5 h-5 mr-2 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" /><path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" /></svg>
+                            <a href="mailto:support@broskieshub.com" class="hover:text-indigo-600 transition-colors">support@broskieshub.com</a>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5h-1.528a1.5 1.5 0 01-1.491-.961l-.214-.642a13.51 13.51 0 01-8.604-8.604l-.642-.214A1.5 1.5 0 012 5.028V3.5z" clip-rule="evenodd" /></svg>
+                            <span>+91 8148040507</span>
+                        </li>
+                        <li class="flex items-start">
+                             <svg class="w-5 h-5 mr-2 text-gray-400 flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M9.69 18.933l.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 00.281-.14c.186-.1.4-.27.6-.5s.4-.519.5-.814c.1-.295.1-.62.1-.998V8.5a1 1 0 00-1-1h-1a1 1 0 100 2v.689a.5.5 0 01-.105.302l-.003.003a.994.994 0 01-.19.206c-.053.045-.11.08-.17.111a1.01 1.01 0 01-.21.096c-.06.024-.12.04-.18.05l-.004.002a.998.998 0 01-.25.04c-.07.006-.14.009-.21.01H10a1 1 0 00-1 1v6.5a1 1 0 001 1h.5a1 1 0 001-1v-.69c.003-.002.005-.005.007-.007l.006-.006a.995.995 0 01.189-.195c.053-.044.109-.08.168-.11a1.01 1.01 0 01.21-.097c.06-.024.12-.04.18-.05l.004-.002a.992.992 0 01.25-.04c.07-.006.14-.009.21-.01H12a1 1 0 100-2h-.5a1 1 0 00-1 1v.689a.5.5 0 01-.105.302l-.003.003a.994.994 0 01-.19.206c-.053.045-.11.08-.17.111a1.01 1.01 0 01-.21.096c-.06.024-.12.04-.18.05l-.004.002a.998.998 0 01-.25.04c-.07.006-.14.009-.21.01H10a1 1 0 00-1 1V18a1 1 0 001 1s.11.02.308-.067l.002-.001z" clip-rule="evenodd" /><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm0 2c-5.523 0-10-4.477-10-10S4.477 0 10 0s10 4.477 10 10-4.477 10-10 10z" clip-rule="evenodd" /></svg>
+                            <span>Broskieshub, ACIC-KIF, KARE, Central Library 2nd Floor, Anand Nagar, Krishnan Koil, S.Ramachandrapuram Virudhunagar Srivilliputhur Tamil Nadu India 626126</span>
+                        </li>
+                    </ul>
+                </div>
           </div>
 
           <div className="border-t border-slate-200 mt-12 pt-8">
