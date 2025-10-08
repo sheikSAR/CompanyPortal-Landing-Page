@@ -433,7 +433,7 @@ export default function Index() {
             <Button
               variant="cta"
               onClick={() => window.open('https://hire.broskieshub.com/', '_blank', 'noopener,noreferrer')}
-              className="px-12 py-4 text-lg rounded-xl"
+              className="px-12 py-4 text-lg rounded-xl btn-premium"
             >
               See Our Success Stories
             </Button>
