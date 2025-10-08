@@ -154,9 +154,13 @@ export default function Index() {
                 <Mail className="w-5 h-5 text-[#2626e7]" />
                 <span className="font-medium">support@broskieshub.com</span>
               </a>
-              <Button variant="cta" size="lg" onClick={scrollToForm}>
-                Start a Pilot
-              </Button>
+              <Button
+  variant="cta"
+  size="lg"
+  onClick={() => window.open('https://hire.broskieshub.com/', '_blank', 'noopener,noreferrer')}
+>
+  Start a Pilot
+</Button>
             </div>
           </div>
         </div>
