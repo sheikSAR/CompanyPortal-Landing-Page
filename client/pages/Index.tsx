@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -25,6 +25,10 @@ import {
   Mail,
   Building,
   User,
+  Linkedin,
+  Twitter,
+  Instagram,
+  Globe,
 } from "lucide-react";
 
 export default function Index() {
@@ -55,22 +59,11 @@ export default function Index() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-  };
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
-  };
-
-  const scrollToForm = () => {
-    document
-      .getElementById("hero-form")
-      ?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   const universityLogos: string[] = [
@@ -154,7 +147,18 @@ export default function Index() {
                 <Mail className="w-5 h-5 text-[#2626e7]" />
                 <span className="font-medium">support@broskieshub.com</span>
               </a>
-              <Button variant="cta" size="lg" onClick={scrollToForm}>
+              <Button
+                variant="cta"
+                size="lg"
+                onClick={() =>
+                  window.open(
+                    "https://hire.broskieshub.com/",
+                    "_blank",
+                    "noopener,noreferrer",
+                  )
+                }
+                className="px-12 py-6 text-lg rounded-xl btn-premium glow-in-out"
+              >
                 Start a Pilot
               </Button>
             </div>
@@ -226,8 +230,14 @@ export default function Index() {
               <Button
                 variant="cta"
                 size="lg"
-                onClick={scrollToForm}
-                className="px-12 py-6 text-lg rounded-xl"
+                onClick={() =>
+                  window.open(
+                    "https://hire.broskieshub.com/",
+                    "_blank",
+                    "noopener,noreferrer",
+                  )
+                }
+                className="px-12 py-6 text-lg rounded-xl btn-premium glow-in-out"
               >
                 Request My Free Pilot
               </Button>
@@ -236,99 +246,178 @@ export default function Index() {
                 pipeline.
               </p>
             </div>
+            <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop
+                    offset="0%"
+                    style={{ stopColor: "#C7D2FE", stopOpacity: 1 }}
+                  />
+                  <stop
+                    offset="100%"
+                    style={{ stopColor: "#E0E7FF", stopOpacity: 1 }}
+                  />
+                </linearGradient>
+                <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop
+                    offset="0%"
+                    style={{ stopColor: "#4F46E5", stopOpacity: 1 }}
+                  />
+                  <stop
+                    offset="100%"
+                    style={{ stopColor: "#1D9BF0", stopOpacity: 1 }}
+                  />
+                </linearGradient>
+              </defs>
+              {/* Background shape */}
+              <path
+                d="M50,50 Q250,-50 450,50 T450,350 Q250,450 50,350 T50,50 Z"
+                fill="url(#grad1)"
+              />
 
-            {/* Right - Lead Capture Form */}
-            <div>
-              <Card className="max-w-lg mx-auto bg-white border border-slate-200 shadow-2xl rounded-2xl">
-                <CardHeader className="text-center py-8">
-                  <CardTitle className="text-2xl font-bold text-slate-900 mb-2">
-                    Start Your Risk-Free Pilot
-                  </CardTitle>
-                  <CardDescription className="text-slate-600">
-                    Join innovative companies already transforming their hiring
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="px-8 pb-8">
-                  <form
-                    id="hero-form"
-                    onSubmit={handleSubmit}
-                    className="space-y-6"
-                  >
-                    <div className="space-y-4">
-                      <div>
-                        <label
-                          htmlFor="name"
-                          className="block text-sm font-medium text-slate-700 mb-2"
-                        >
-                          Full Name
-                        </label>
-                        <div className="relative">
-                          <User className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5" />
-                          <Input
-                            type="text"
-                            name="name"
-                            id="name"
-                            required
-                            value={formData.name}
-                            onChange={handleInputChange}
-                            className="pl-12"
-                            placeholder="Enter your full name"
-                          />
-                        </div>
-                      </div>
+              {/* Chaotic resumes on left */}
+              <rect
+                x="60"
+                y="150"
+                width="80"
+                height="10"
+                fill="#A5B4FC"
+                rx="2"
+                transform="rotate(-15 100 155)"
+              />
+              <rect
+                x="80"
+                y="180"
+                width="90"
+                height="10"
+                fill="#A5B4FC"
+                rx="2"
+                transform="rotate(10 125 185)"
+              />
+              <rect
+                x="70"
+                y="220"
+                width="70"
+                height="10"
+                fill="#A5B4FC"
+                rx="2"
+                transform="rotate(-5 105 225)"
+              />
 
-                      <div>
-                        <label
-                          htmlFor="email"
-                          className="block text-sm font-medium text-slate-700 mb-2"
-                        >
-                          Work Email
-                        </label>
-                        <div className="relative">
-                          <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5" />
-                          <Input
-                            type="email"
-                            name="email"
-                            id="email"
-                            required
-                            value={formData.email}
-                            onChange={handleInputChange}
-                            className="pl-12"
-                            placeholder="you@company.com"
-                          />
-                        </div>
-                      </div>
+              {/* BroskiesHub processor in middle */}
+              <rect
+                x="200"
+                y="150"
+                width="100"
+                height="100"
+                fill="url(#grad2)"
+                rx="15"
+              />
+              <path
+                d="M220 180 l15 15 l30 -30"
+                stroke="white"
+                strokeWidth="5"
+                fill="none"
+                strokeLinecap="round"
+              />
 
-                      <div>
-                        <label
-                          htmlFor="company"
-                          className="block text-sm font-medium text-slate-700 mb-2"
-                        >
-                          Company
-                        </label>
-                        <div className="relative">
-                          <Building className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5" />
-                          <Input
-                            type="text"
-                            name="company"
-                            id="company"
-                            required
-                            value={formData.company}
-                            onChange={handleInputChange}
-                            className="pl-12"
-                            placeholder="Your company name"
-                          />
-                        </div>
-                      </div>
-                    </div>
+              {/* Arrows showing flow */}
+              <path
+                d="M160 200 Q180 200 200 200"
+                stroke="#6366F1"
+                strokeWidth="3"
+                fill="none"
+                strokeDasharray="5,5"
+              />
+              <path
+                d="M195 195 L200 200 L195 205"
+                stroke="#6366F1"
+                strokeWidth="3"
+                fill="none"
+              />
+              <path
+                d="M300 200 Q320 200 340 200"
+                stroke="#6366F1"
+                strokeWidth="3"
+                fill="none"
+                strokeDasharray="5,5"
+              />
+              <path
+                d="M335 195 L340 200 L335 205"
+                stroke="#6366F1"
+                strokeWidth="3"
+                fill="none"
+              />
 
-                    <Button type="submit" className="w-full" variant="cta">
-                      Request My Free Pilot
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
-            </div>
+              {/* Structured profiles on right */}
+              <rect
+                x="350"
+                y="160"
+                width="100"
+                height="25"
+                fill="#FFFFFF"
+                rx="5"
+                stroke="#E0E7FF"
+              />
+              <circle cx="362" cy="172.5" r="5" fill="#10B981" />
+              <rect
+                x="372"
+                y="170"
+                width="40"
+                height="5"
+                fill="#C7D2FE"
+                rx="2"
+              />
+
+              <rect
+                x="350"
+                y="195"
+                width="100"
+                height="25"
+                fill="#FFFFFF"
+                rx="5"
+                stroke="#E0E7FF"
+              />
+              <circle cx="362" cy="207.5" r="5" fill="#10B981" />
+              <rect
+                x="372"
+                y="205"
+                width="50"
+                height="5"
+                fill="#C7D2FE"
+                rx="2"
+              />
+
+              <rect
+                x="350"
+                y="230"
+                width="100"
+                height="25"
+                fill="#FFFFFF"
+                rx="5"
+                stroke="#E0E7FF"
+              />
+              <circle cx="362" cy="242.5" r="5" fill="#10B981" />
+              <rect
+                x="372"
+                y="240"
+                width="30"
+                height="5"
+                fill="#C7D2FE"
+                rx="2"
+              />
+
+              <text
+                x="250"
+                y="350"
+                font-family="Inter, sans-serif"
+                font-size="14"
+                fill="#64748B"
+                text-anchor="middle"
+              >
+                From Resume Chaos to Candidate Clarity
+              </text>
+            </svg>
           </div>
         </div>
       </section>
@@ -337,7 +426,7 @@ export default function Index() {
       <section className="py-16 bg-white scroll-reveal">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-slate-600 font-semibold text-lg mb-6 uppercase tracking-wide">
-            TRUSTED BY TALENT FROM TOP UNIVERSITIES
+            Where Top University Talent Comes to Prove Their Skill
           </p>
           <div className="marquee group">
             <div className="marquee-track">
@@ -354,6 +443,28 @@ export default function Index() {
                   />
                 </div>
               ))}
+            </div>
+          </div>
+
+          {/* Secondary marquee (reverse direction) */}
+          <div className="marquee group mt-6 marquee-two">
+            <div className="marquee-track reverse">
+              {[...universityLogos]
+                .reverse()
+                .concat([...universityLogos])
+                .map((logo, index) => (
+                  <div
+                    key={`bottom-${index}`}
+                    className="flex justify-center items-center h-16 px-4"
+                  >
+                    <img
+                      src={logo}
+                      alt={`University alt ${index + 1}`}
+                      className="h-12 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 group-hover:scale-105 hover:drop-shadow-md"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
             </div>
           </div>
         </div>
@@ -398,7 +509,13 @@ export default function Index() {
 
               <Button
                 variant="cta"
-                onClick={scrollToForm}
+                onClick={() =>
+                  window.open(
+                    "https://hire.broskieshub.com/",
+                    "_blank",
+                    "noopener,noreferrer",
+                  )
+                }
                 className="px-10 py-4 text-lg rounded-xl"
               >
                 Fix My Hiring Process
@@ -467,8 +584,14 @@ export default function Index() {
           <div className="text-center">
             <Button
               variant="cta"
-              onClick={scrollToForm}
-              className="px-12 py-4 text-lg rounded-xl"
+              onClick={() =>
+                window.open(
+                  "https://hire.broskieshub.com/",
+                  "_blank",
+                  "noopener,noreferrer",
+                )
+              }
+              className="px-12 py-4 text-lg rounded-xl btn-premium"
             >
               See Our Success Stories
             </Button>
@@ -506,8 +629,14 @@ export default function Index() {
               </p>
               <Button
                 variant="cta"
-                onClick={scrollToForm}
-                className="px-10 py-4 rounded-xl"
+                onClick={() =>
+                  window.open(
+                    "https://hire.broskieshub.com/",
+                    "_blank",
+                    "noopener,noreferrer",
+                  )
+                }
+                className="px-10 py-4 rounded-xl btn-premium"
               >
                 Build My Pipeline
               </Button>
@@ -531,8 +660,14 @@ export default function Index() {
               </p>
               <Button
                 variant="cta"
-                onClick={scrollToForm}
-                className="px-10 py-4 rounded-xl"
+                onClick={() =>
+                  window.open(
+                    "https://hire.broskieshub.com/",
+                    "_blank",
+                    "noopener,noreferrer",
+                  )
+                }
+                className="px-10 py-4 rounded-xl btn-premium"
               >
                 See Sample Report
               </Button>
@@ -546,7 +681,17 @@ export default function Index() {
                   Request a sample candidate report to see the depth of our
                   performance insights and Skill Passports.
                 </p>
-                <Button variant="cta" onClick={scrollToForm}>
+                <Button
+                  variant="cta"
+                  onClick={() =>
+                    window.open(
+                      "https://hire.broskieshub.com/",
+                      "_blank",
+                      "noopener,noreferrer",
+                    )
+                  }
+                  className="btn-premium"
+                >
                   Request Sample
                 </Button>
               </Card>
@@ -746,8 +891,14 @@ export default function Index() {
           <div className="text-center mt-16">
             <Button
               variant="cta"
-              onClick={scrollToForm}
-              className="px-12 py-4 text-lg rounded-xl"
+              onClick={() =>
+                window.open(
+                  "https://hire.broskieshub.com/",
+                  "_blank",
+                  "noopener,noreferrer",
+                )
+              }
+              className="px-12 py-4 text-lg rounded-xl btn-premium glow-in-out"
             >
               Start My Custom Process
             </Button>
@@ -867,21 +1018,33 @@ export default function Index() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-24 bg-[linear-gradient(135deg,#2626e7,#4b4bff)] scroll-reveal">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="relative">
-            <div className="relative bg-white/10 backdrop-blur-xl rounded-3xl p-12 border border-white/20">
-              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-8">
-                Stop Wasting Time on Bad Hires
-              </h2>
-              <p className="text-xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed">
-                Your next top performer is waiting in a Tier-2 city, ready to
-                prove their skills. Let us find them for you. Start a risk-free
-                pilot today and get a shortlist of proven candidates in weeks,
-                not months.
-              </p>
-              <Button variant="cta" onClick={scrollToForm} className="px-12 py-6 text-lg rounded-xl" > Claim My Risk-Free Pilot </Button>
-            </div>
+      <section id="final-cta" className="py-20 md:py-24 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="bg-indigo-600 rounded-2xl p-10 md:p-16 text-center shadow-2xl bg-[radial-gradient(ellipse_at_top,var(--tw-gradient-stops))] from-indigo-600 to-indigo-800 relative overflow-hidden">
+            <div
+              className="absolute top-0 left-0 w-full h-full opacity-10"
+              style={{
+                backgroundImage:
+                  "url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fillRule=%22evenodd%22%3E%3Cg fill=%22%23ffffff%22 fill-opacity=%220.4%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')",
+              }}
+            />
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4 z-10 relative">
+              Stop Wasting Time on Bad Hires
+            </h2>
+            <p className="text-indigo-100 max-w-3xl mx-auto mb-8 text-lg z-10 relative">
+              Your next top performer is waiting in a Tier-2 city, ready to
+              prove their skills. Let us find them for you. Start a risk-free
+              pilot today and get a shortlist of proven candidates in weeks, not
+              months.
+            </p>
+            <a
+              href="https://hire.broskieshub.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white text-indigo-600 font-bold py-4 px-10 rounded-lg text-lg transition-all hover:scale-105 inline-block hover:bg-gray-200 shadow-lg z-10 relative"
+            >
+              Claim My Risk-Free Pilot
+            </a>
           </div>
         </div>
       </section>
@@ -913,38 +1076,111 @@ export default function Index() {
               </p>
             </div>
 
-            <div>
-              <h3 className="font-bold text-slate-900 mb-4">Company</h3>
-              <ul className="space-y-2 text-slate-600">
+            {/* Quick Links */}
+            <div className="lg:col-span-2">
+              <h3 className="font-bold text-gray-900 mb-4">Quick Links</h3>
+              <ul className="space-y-3">
                 <li>
-                  <a href="#">About Us</a>
+                  <a
+                    href="#"
+                    className="hover:text-indigo-600 transition-colors"
+                  >
+                    For Companies
+                  </a>
                 </li>
                 <li>
-                  <a href="#">How It Works</a>
+                  <a
+                    href="#"
+                    className="hover:text-indigo-600 transition-colors"
+                  >
+                    For Job Seekers
+                  </a>
                 </li>
                 <li>
-                  <a href="#">Success Stories</a>
+                  <a
+                    href="#"
+                    className="hover:text-indigo-600 transition-colors"
+                  >
+                    Features
+                  </a>
                 </li>
                 <li>
-                  <a href="#">Careers</a>
+                  <a
+                    href="#"
+                    className="hover:text-indigo-600 transition-colors"
+                  >
+                    Stories
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#faq"
+                    className="hover:text-indigo-600 transition-colors"
+                  >
+                    FAQ
+                  </a>
                 </li>
               </ul>
             </div>
 
-            <div>
-              <h3 className="font-bold text-slate-900 mb-4">Resources</h3>
-              <ul className="space-y-2 text-slate-600">
-                <li>
-                  <a href="#">For Job Seekers</a>
+            {/* Contact */}
+            <div className="lg:col-span-3">
+              <h3 className="font-bold text-gray-900 mb-4">Contact</h3>
+              <ul className="space-y-3 text-sm">
+                <li className="flex items-center">
+                  <svg
+                    className="w-5 h-5 mr-2 text-gray-400"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
+                    <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
+                  </svg>
+                  <a
+                    href="mailto:support@broskieshub.com"
+                    className="hover:text-indigo-600 transition-colors"
+                  >
+                    support@broskieshub.com
+                  </a>
                 </li>
-                <li>
-                  <a href="#">Privacy Policy</a>
+                <li className="flex items-center">
+                  <svg
+                    className="w-5 h-5 mr-2 text-gray-400"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5h-1.528a1.5 1.5 0 01-1.491-.961l-.214-.642a13.51 13.51 0 01-8.604-8.604l-.642-.214A1.5 1.5 0 012 5.028V3.5z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <span>+91 8148040507</span>
                 </li>
-                <li>
-                  <a href="#">Terms of Service</a>
-                </li>
-                <li>
-                  <a href="#">Contact</a>
+                <li className="flex items-start">
+                  <svg
+                    className="w-5 h-5 mr-2 text-gray-400 flex-shrink-0 mt-0.5"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M9.69 18.933l.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 00.281-.14c.186-.1.4-.27.6-.5s.4-.519.5-.814c.1-.295.1-.62.1-.998V8.5a1 1 0 00-1-1h-1a1 1 0 100 2v.689a.5.5 0 01-.105.302l-.003.003a.994.994 0 01-.19.206c-.053.045-.11.08-.17.111a1.01 1.01 0 01-.21.096c-.06.024-.12.04-.18.05l-.004.002a.998.998 0 01-.25.04c-.07.006-.14.009-.21.01H10a1 1 0 00-1 1v6.5a1 1 0 001 1h.5a1 1 0 001-1v-.69c.003-.002.005-.005.007-.007l.006-.006a.995.995 0 01.189-.195c.053-.044.109-.08.168-.11a1.01 1.01 0 01.21-.097c.06-.024.12-.04.18-.05l.004-.002a.992.992 0 01.25-.04c.07-.006.14-.009.21-.01H12a1 1 0 100-2h-.5a1 1 0 00-1 1v.689a.5.5 0 01-.105.302l-.003.003a.994.994 0 01-.19.206c-.053.045-.11.08-.17.111a1.01 1.01 0 01-.21.096c-.06.024-.12.04-.18.05l-.004.002a.998.998 0 01-.25.04c-.07.006-.14.009-.21.01H10a1 1 0 00-1 1V18a1 1 0 001 1s.11.02.308-.067l.002-.001z"
+                      clipRule="evenodd"
+                    />
+                    <path
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm0 2c-5.523 0-10-4.477-10-10S4.477 0 10 0s10 4.477 10 10-4.477 10-10 10z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <span>
+                    Broskieshub, ACIC-KIF, KARE, Central Library 2nd Floor,
+                    Anand Nagar, Krishnan Koil, S.Ramachandrapuram Virudhunagar
+                    Srivilliputhur Tamil Nadu India 626126
+                  </span>
                 </li>
               </ul>
             </div>
@@ -957,15 +1193,17 @@ export default function Index() {
                 <div className="flex gap-3">
                   <a
                     href="#"
+                    aria-label="LinkedIn"
                     className="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center hover:bg-[#2626e7] hover:text-white transition-all"
                   >
-                    in
+                    <Linkedin className="w-4 h-4" />
                   </a>
                   <a
                     href="#"
+                    aria-label="Twitter"
                     className="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center hover:bg-[#2626e7] hover:text-white transition-all"
                   >
-                    tw
+                    <Twitter className="w-4 h-4" />
                   </a>
                 </div>
               </div>
