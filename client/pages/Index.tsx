@@ -472,7 +472,7 @@ export default function Index() {
               <Button
                 variant="cta"
                 onClick={() => window.open('https://hire.broskieshub.com/', '_blank', 'noopener,noreferrer')}
-                className="px-10 py-4 rounded-xl"
+                className="px-10 py-4 rounded-xl btn-premium"
               >
                 Build My Pipeline
               </Button>
