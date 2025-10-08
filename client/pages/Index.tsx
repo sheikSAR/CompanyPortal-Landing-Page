@@ -25,6 +25,10 @@ import {
   Mail,
   Building,
   User,
+  Linkedin,
+  Twitter,
+  Instagram,
+  Globe,
 } from "lucide-react";
 
 export default function Index() {
@@ -147,7 +151,7 @@ export default function Index() {
                 variant="cta"
                 size="lg"
                 onClick={() => window.open('https://hire.broskieshub.com/', '_blank', 'noopener,noreferrer')}
-                className="px-12 py-6 text-lg rounded-xl"
+                className="px-12 py-6 text-lg rounded-xl btn-premium glow-in-out"
               >
                 Start a Pilot
               </Button>
@@ -221,7 +225,7 @@ export default function Index() {
                 variant="cta"
                 size="lg"
                 onClick={() => window.open('https://hire.broskieshub.com/', '_blank', 'noopener,noreferrer')}
-                className="px-12 py-6 text-lg rounded-xl"
+                className="px-12 py-6 text-lg rounded-xl btn-premium glow-in-out"
               >
                 Request My Free Pilot
               </Button>
