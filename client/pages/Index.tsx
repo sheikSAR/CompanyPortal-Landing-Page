@@ -35,6 +35,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from "@/components/Navbar";
 import FomoAlert from "@/components/FomoAlert";
 import Footer from "@/components/Footer";
+import GradientText from "@/components/GradientText";
+import TargetCursor from "@/components/TargetCursor";
 
 gsap.registerPlugin(ScrollTrigger);
 
