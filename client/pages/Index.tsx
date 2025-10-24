@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -30,6 +30,13 @@ import {
   Instagram,
   Globe,
 } from "lucide-react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Navbar from "@/components/Navbar";
+import FomoAlert from "@/components/FomoAlert";
+import Footer from "@/components/Footer";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Index() {
   const [formData, setFormData] = useState({
@@ -38,25 +45,95 @@ export default function Index() {
     company: "",
   });
 
-  const [isVisible, setIsVisible] = useState(false);
+  const heroRef = useRef<HTMLDivElement>(null);
+  const svgRef = useRef<SVGSVGElement>(null);
 
   useEffect(() => {
-    setIsVisible(true);
+    // Hero section animations
+    const heroContext = gsap.context(() => {
+      const tl = gsap.timeline();
 
-    const handleScroll = () => {
-      const elements = document.querySelectorAll(".scroll-reveal");
-      elements.forEach((element) => {
-        const elementTop = (element as HTMLElement).getBoundingClientRect().top;
-        const elementVisible = 150;
-        if (elementTop < window.innerHeight - elementVisible) {
-          element.classList.add("revealed");
-        }
+      tl.to(".hero-badge", {
+        duration: 0.8,
+        opacity: 1,
+        y: 0,
+        ease: "power2.out",
+        stagger: 0.1,
+      }, 0);
+
+      tl.to(".hero-title", {
+        duration: 0.8,
+        opacity: 1,
+        y: 0,
+        ease: "power2.out",
+      }, 0.2);
+
+      tl.to(".hero-subtitle", {
+        duration: 0.8,
+        opacity: 1,
+        y: 0,
+        ease: "power2.out",
+      }, 0.4);
+
+      tl.to(".hero-feature", {
+        duration: 0.6,
+        opacity: 1,
+        y: 0,
+        ease: "power2.out",
+        stagger: 0.1,
+      }, 0.5);
+
+      tl.to(".hero-cta", {
+        duration: 0.8,
+        opacity: 1,
+        y: 0,
+        ease: "power2.out",
+      }, 0.8);
+
+      // SVG animation
+      tl.to(".hero-image", {
+        duration: 1,
+        opacity: 1,
+        scale: 1,
+        ease: "power2.out",
+      }, 0);
+
+      // Floating animation for SVG
+      gsap.to(".hero-image", {
+        y: -15,
+        duration: 3,
+        ease: "sine.inOut",
+        repeat: -1,
+        yoyo: true,
+      }, 1);
+    }, heroRef);
+
+    return () => heroContext.revert();
+  }, []);
+
+  // Scroll reveal animations
+  useEffect(() => {
+    const revealElements = document.querySelectorAll(".scroll-reveal");
+
+    revealElements.forEach((element) => {
+      gsap.to(element, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: element,
+          start: "top 80%",
+          end: "top 50%",
+          scrub: false,
+          markers: false,
+        },
       });
-    };
+    });
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
   }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -121,76 +198,36 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-white via-slate-50 to-blue-50">
+      {/* FOMO Alert Banner */}
+      <FomoAlert />
+
       {/* Navigation */}
-      <nav className="bg-white/70 backdrop-blur-xl border-b border-slate-200 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            <a href="/" className="flex items-center gap-3">
-              <img
-                src="https://res.cloudinary.com/dk2wudmxh/image/upload/v1759233080/BroskiesHub_Incubated_Logo_bwrago.png"
-                alt="BroskiesHub Logo"
-                className="h-10 w-auto object-contain"
-              />
-            </a>
-            <div className="hidden md:flex items-center gap-6">
-              <a
-                href="tel:+918148040507"
-                className="flex items-center gap-2 text-slate-700 hover:text-[#2626e7] transition-colors"
-              >
-                <Phone className="w-5 h-5 text-[#2626e7]" />
-                <span className="font-medium">+918148040507</span>
-              </a>
-              <a
-                href="mailto:support@broskieshub.com"
-                className="flex items-center gap-2 text-slate-700 hover:text-[#2626e7] transition-colors"
-              >
-                <Mail className="w-5 h-5 text-[#2626e7]" />
-                <span className="font-medium">support@broskieshub.com</span>
-              </a>
-              <Button
-                variant="cta"
-                size="lg"
-                onClick={() =>
-                  window.open(
-                    "https://hire.broskieshub.com/",
-                    "_blank",
-                    "noopener,noreferrer",
-                  )
-                }
-                className="px-12 py-6 text-lg rounded-xl btn-premium glow-in-out"
-              >
-                Start a Pilot
-              </Button>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Hero Section */}
       <section
-        className={`relative py-20 lg:py-28 min-h-[80vh] flex items-center ${
-          isVisible ? "animate-fade-in" : "opacity-0"
-        }`}
+        ref={heroRef}
+        className="relative py-12 lg:py-16 min-h-[80vh] flex items-center"
       >
         <div className="absolute inset-0 bg-[linear-gradient(90deg,#ffffff,#eef2ff,rgba(38,38,231,0.06))]"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left Content */}
             <div>
-              <Badge className="mb-6 bg-blue-100 text-slate-700 border-none px-4 py-2 rounded-full font-medium">
+              <Badge className="hero-badge mb-6 bg-blue-100 text-slate-700 border-none px-4 py-2 rounded-full font-medium opacity-0 translate-y-4">
                 TRUSTED BY INNOVATIVE HIRING TEAMS
               </Badge>
-              <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6 gradient-flow bg-clip-text text-transparent">
+              <h1 className="hero-title text-4xl lg:text-6xl font-bold leading-tight mb-6 gradient-flow bg-clip-text text-transparent opacity-0 translate-y-4">
                 Hire Engineers Who Actually Deliver
               </h1>
-              <p className="text-xl text-slate-700 mb-8 leading-relaxed max-w-2xl">
+              <p className="hero-subtitle text-xl text-slate-700 mb-8 leading-relaxed max-w-2xl opacity-0 translate-y-4">
                 Get a pipeline of top-tier talent who have already proven they
                 can solve your real-world problems.
               </p>
 
               <div className="space-y-5 mb-10">
-                <div className="flex items-start gap-4 group">
-                  <div className="w-8 h-8 bg-brand-gradient rounded-full flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+                <div className="hero-feature flex items-start gap-4 group opacity-0 translate-y-4" style={{ animationDelay: "0.7s" }}>
+                  <div className="w-8 h-8 bg-brand-gradient rounded-full flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                     <Check className="w-5 h-5 text-white" />
                   </div>
                   <p className="text-slate-700 text-lg">
@@ -201,8 +238,8 @@ export default function Index() {
                     45-minute interview.
                   </p>
                 </div>
-                <div className="flex items-start gap-4 group">
-                  <div className="w-8 h-8 bg-brand-gradient rounded-full flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+                <div className="hero-feature flex items-start gap-4 group opacity-0 translate-y-4" style={{ animationDelay: "0.8s" }}>
+                  <div className="w-8 h-8 bg-brand-gradient rounded-full flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                     <Check className="w-5 h-5 text-white" />
                   </div>
                   <p className="text-slate-700 text-lg">
@@ -213,8 +250,8 @@ export default function Index() {
                     screening calls. We do the heavy lifting.
                   </p>
                 </div>
-                <div className="flex items-start gap-4 group">
-                  <div className="w-8 h-8 bg-brand-gradient rounded-full flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+                <div className="hero-feature flex items-start gap-4 group opacity-0 translate-y-4" style={{ animationDelay: "0.9s" }}>
+                  <div className="w-8 h-8 bg-brand-gradient rounded-full flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                     <Check className="w-5 h-5 text-white" />
                   </div>
                   <p className="text-slate-700 text-lg">
@@ -237,7 +274,7 @@ export default function Index() {
                     "noopener,noreferrer",
                   )
                 }
-                className="px-12 py-6 text-lg rounded-xl btn-premium glow-in-out"
+                className="hero-cta px-12 py-6 text-lg rounded-xl btn-premium cta-pulse opacity-0 translate-y-4"
               >
                 Request My Free Pilot
               </Button>
@@ -246,7 +283,12 @@ export default function Index() {
                 pipeline.
               </p>
             </div>
-            <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+            <svg
+              ref={svgRef}
+              className="hero-image opacity-0 scale-95"
+              viewBox="0 0 500 400"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <defs>
                 <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
                   <stop
@@ -269,13 +311,11 @@ export default function Index() {
                   />
                 </linearGradient>
               </defs>
-              {/* Background shape */}
               <path
                 d="M50,50 Q250,-50 450,50 T450,350 Q250,450 50,350 T50,50 Z"
                 fill="url(#grad1)"
               />
 
-              {/* Chaotic resumes on left */}
               <rect
                 x="60"
                 y="150"
@@ -304,7 +344,6 @@ export default function Index() {
                 transform="rotate(-5 105 225)"
               />
 
-              {/* BroskiesHub processor in middle */}
               <rect
                 x="200"
                 y="150"
@@ -321,7 +360,6 @@ export default function Index() {
                 strokeLinecap="round"
               />
 
-              {/* Arrows showing flow */}
               <path
                 d="M160 200 Q180 200 200 200"
                 stroke="#6366F1"
@@ -349,7 +387,6 @@ export default function Index() {
                 fill="none"
               />
 
-              {/* Structured profiles on right */}
               <rect
                 x="350"
                 y="160"
@@ -410,10 +447,10 @@ export default function Index() {
               <text
                 x="250"
                 y="350"
-                font-family="Inter, sans-serif"
-                font-size="14"
+                fontFamily="Inter, sans-serif"
+                fontSize="14"
                 fill="#64748B"
-                text-anchor="middle"
+                textAnchor="middle"
               >
                 From Resume Chaos to Candidate Clarity
               </text>
@@ -423,7 +460,7 @@ export default function Index() {
       </section>
 
       {/* Social Proof Section - University Logos */}
-      <section className="py-16 bg-white scroll-reveal">
+      <section className="py-16 bg-white scroll-reveal opacity-0 translate-y-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-slate-600 font-semibold text-lg mb-6 uppercase tracking-wide">
             Where Top University Talent Comes to Prove Their Skill
@@ -446,7 +483,6 @@ export default function Index() {
             </div>
           </div>
 
-          {/* Secondary marquee (reverse direction) */}
           <div className="marquee group mt-6 marquee-two">
             <div className="marquee-track reverse">
               {[...universityLogos]
@@ -471,7 +507,7 @@ export default function Index() {
       </section>
 
       {/* Pain Point Section */}
-      <section className="py-24 bg-gradient-to-br from-slate-50 to-blue-50 scroll-reveal">
+      <section className="py-24 bg-gradient-to-br from-slate-50 to-blue-50 scroll-reveal opacity-0 translate-y-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
@@ -516,7 +552,7 @@ export default function Index() {
                     "noopener,noreferrer",
                   )
                 }
-                className="px-10 py-4 text-lg rounded-xl"
+                className="px-10 py-4 text-lg rounded-xl cta-pulse"
               >
                 Fix My Hiring Process
               </Button>
@@ -537,7 +573,7 @@ export default function Index() {
       </section>
 
       {/* Social Proof Stats Section */}
-      <section className="py-24 bg-gradient-to-r from-slate-100 to-blue-100 scroll-reveal">
+      <section className="py-24 bg-gradient-to-r from-slate-100 to-blue-100 scroll-reveal opacity-0 translate-y-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 text-center mb-16">
             Proven Results That Matter
@@ -591,7 +627,7 @@ export default function Index() {
                   "noopener,noreferrer",
                 )
               }
-              className="px-12 py-4 text-lg rounded-xl btn-premium"
+              className="px-12 py-4 text-lg rounded-xl btn-premium cta-pulse"
             >
               See Our Success Stories
             </Button>
@@ -602,8 +638,7 @@ export default function Index() {
       {/* Value Propositions - Three Sections */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-32">
-          {/* Value Prop 1 */}
-          <div className="grid lg:grid-cols-2 gap-16 items-center scroll-reveal">
+          <div className="grid lg:grid-cols-2 gap-16 items-center scroll-reveal opacity-0 translate-y-10">
             <div className="order-2 lg:order-1">
               <div className="relative">
                 <div className="absolute inset-0 bg-brand-gradient rounded-3xl transform -rotate-3 opacity-20"></div>
@@ -636,15 +671,14 @@ export default function Index() {
                     "noopener,noreferrer",
                   )
                 }
-                className="px-10 py-4 rounded-xl btn-premium"
+                className="px-10 py-4 rounded-xl btn-premium cta-pulse"
               >
                 Build My Pipeline
               </Button>
             </div>
           </div>
 
-          {/* Value Prop 2 */}
-          <div className="grid lg:grid-cols-2 gap-16 items-center scroll-reveal">
+          <div className="grid lg:grid-cols-2 gap-16 items-center scroll-reveal opacity-0 translate-y-10">
             <div>
               <Badge className="mb-6 bg-blue-100 text-slate-700 border-none px-4 py-2 rounded-full font-medium">
                 DATA-DRIVEN INSIGHTS
@@ -667,7 +701,7 @@ export default function Index() {
                     "noopener,noreferrer",
                   )
                 }
-                className="px-10 py-4 rounded-xl btn-premium"
+                className="px-10 py-4 rounded-xl btn-premium cta-pulse"
               >
                 See Sample Report
               </Button>
@@ -690,7 +724,7 @@ export default function Index() {
                       "noopener,noreferrer",
                     )
                   }
-                  className="btn-premium"
+                  className="btn-premium cta-pulse"
                 >
                   Request Sample
                 </Button>
@@ -698,8 +732,7 @@ export default function Index() {
             </div>
           </div>
 
-          {/* Value Prop 3 - Comparison Table */}
-          <div className="scroll-reveal">
+          <div className="scroll-reveal opacity-0 translate-y-10">
             <div className="text-center mb-16">
               <Badge className="mb-6 bg-blue-100 text-slate-700 border-none px-4 py-2 rounded-full font-medium">
                 PROVEN APPROACH
@@ -816,7 +849,7 @@ export default function Index() {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-24 bg-gradient-to-br from-slate-100 to-blue-100 scroll-reveal">
+      <section className="py-24 bg-gradient-to-br from-slate-100 to-blue-100 scroll-reveal opacity-0 translate-y-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
             <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
@@ -898,7 +931,7 @@ export default function Index() {
                   "noopener,noreferrer",
                 )
               }
-              className="px-12 py-4 text-lg rounded-xl btn-premium glow-in-out"
+              className="px-12 py-4 text-lg rounded-xl btn-premium cta-pulse"
             >
               Start My Custom Process
             </Button>
@@ -907,7 +940,7 @@ export default function Index() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 bg-white scroll-reveal">
+      <section className="py-24 bg-white scroll-reveal opacity-0 translate-y-10" id="faq">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
@@ -1018,7 +1051,7 @@ export default function Index() {
       </section>
 
       {/* Final CTA Section */}
-      <section id="final-cta" className="py-20 md:py-24 bg-white">
+      <section id="final-cta" className="py-20 md:py-24 bg-white scroll-reveal opacity-0 translate-y-10">
         <div className="container mx-auto px-6">
           <div className="bg-indigo-600 rounded-2xl p-10 md:p-16 text-center shadow-2xl bg-[radial-gradient(ellipse_at_top,var(--tw-gradient-stops))] from-indigo-600 to-indigo-800 relative overflow-hidden">
             <div
@@ -1041,7 +1074,7 @@ export default function Index() {
               href="https://hire.broskieshub.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white text-indigo-600 font-bold py-4 px-10 rounded-lg text-lg transition-all hover:scale-105 inline-block hover:bg-gray-200 shadow-lg z-10 relative"
+              className="bg-white text-indigo-600 font-bold py-4 px-10 rounded-lg text-lg transition-all hover:scale-105 inline-block hover:bg-gray-200 shadow-lg z-10 relative cta-pulse"
             >
               Claim My Risk-Free Pilot
             </a>
@@ -1050,167 +1083,7 @@ export default function Index() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-r from-slate-50 to-blue-50 border-t border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="md:col-span-2">
-              <div className="flex items-center gap-3 mb-6">
-                <img
-                  src="https://res.cloudinary.com/dk2wudmxh/image/upload/v1759233080/BroskiesHub_Incubated_Logo_bwrago.png"
-                  alt="BroskiesHub"
-                  className="h-10 w-auto object-contain"
-                />
-              </div>
-              <p className="text-slate-600 max-w-md leading-relaxed mb-6">
-                Transforming how companies hire technical talent through proven
-                performance validation.
-              </p>
-
-              <address className="not-italic text-sm text-slate-600 mb-4">
-                Broskieshub, ACIC-KIF, KARE, Central Library 2nd Floor, Anand
-                Nagar, Krishnan Koil, S.Ramachandrapuram, Virudhunagar,
-                Srivilliputhur, Tamil Nadu, India 626126
-              </address>
-              <p className="text-sm text-slate-500">
-                © 2025 BroskiesHub. All rights reserved.
-              </p>
-            </div>
-
-            {/* Quick Links */}
-            <div className="lg:col-span-2">
-              <h3 className="font-bold text-gray-900 mb-4">Quick Links</h3>
-              <ul className="space-y-3">
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-indigo-600 transition-colors"
-                  >
-                    For Companies
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-indigo-600 transition-colors"
-                  >
-                    For Job Seekers
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-indigo-600 transition-colors"
-                  >
-                    Features
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="hover:text-indigo-600 transition-colors"
-                  >
-                    Stories
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#faq"
-                    className="hover:text-indigo-600 transition-colors"
-                  >
-                    FAQ
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            {/* Contact */}
-            <div className="lg:col-span-3">
-              <h3 className="font-bold text-gray-900 mb-4">Contact</h3>
-              <ul className="space-y-3 text-sm">
-                <li className="flex items-center">
-                  <svg
-                    className="w-5 h-5 mr-2 text-gray-400"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
-                    <path d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
-                  </svg>
-                  <a
-                    href="mailto:support@broskieshub.com"
-                    className="hover:text-indigo-600 transition-colors"
-                  >
-                    support@broskieshub.com
-                  </a>
-                </li>
-                <li className="flex items-center">
-                  <svg
-                    className="w-5 h-5 mr-2 text-gray-400"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5h-1.528a1.5 1.5 0 01-1.491-.961l-.214-.642a13.51 13.51 0 01-8.604-8.604l-.642-.214A1.5 1.5 0 012 5.028V3.5z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span>+91 8148040507</span>
-                </li>
-                <li className="flex items-start">
-                  <svg
-                    className="w-5 h-5 mr-2 text-gray-400 flex-shrink-0 mt-0.5"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M9.69 18.933l.003.001C9.89 19.02 10 19 10 19s.11.02.308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 00.281-.14c.186-.1.4-.27.6-.5s.4-.519.5-.814c.1-.295.1-.62.1-.998V8.5a1 1 0 00-1-1h-1a1 1 0 100 2v.689a.5.5 0 01-.105.302l-.003.003a.994.994 0 01-.19.206c-.053.045-.11.08-.17.111a1.01 1.01 0 01-.21.096c-.06.024-.12.04-.18.05l-.004.002a.998.998 0 01-.25.04c-.07.006-.14.009-.21.01H10a1 1 0 00-1 1v6.5a1 1 0 001 1h.5a1 1 0 001-1v-.69c.003-.002.005-.005.007-.007l.006-.006a.995.995 0 01.189-.195c.053-.044.109-.08.168-.11a1.01 1.01 0 01.21-.097c.06-.024.12-.04.18-.05l.004-.002a.992.992 0 01.25-.04c.07-.006.14-.009.21-.01H12a1 1 0 100-2h-.5a1 1 0 00-1 1v.689a.5.5 0 01-.105.302l-.003.003a.994.994 0 01-.19.206c-.053.045-.11.08-.17.111a1.01 1.01 0 01-.21.096c-.06.024-.12.04-.18.05l-.004.002a.998.998 0 01-.25.04c-.07.006-.14.009-.21.01H10a1 1 0 00-1 1V18a1 1 0 001 1s.11.02.308-.067l.002-.001z"
-                      clipRule="evenodd"
-                    />
-                    <path
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm0 2c-5.523 0-10-4.477-10-10S4.477 0 10 0s10 4.477 10 10-4.477 10-10 10z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span>
-                    Broskieshub, ACIC-KIF, KARE, Central Library 2nd Floor,
-                    Anand Nagar, Krishnan Koil, S.Ramachandrapuram Virudhunagar
-                    Srivilliputhur Tamil Nadu India 626126
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-slate-200 mt-12 pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center">
-              <div className="flex items-center gap-4 mb-4 md:mb-0">
-                <span className="text-slate-600">Connect with us:</span>
-                <div className="flex gap-3">
-                  <a
-                    href="#"
-                    aria-label="LinkedIn"
-                    className="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center hover:bg-[#2626e7] hover:text-white transition-all"
-                  >
-                    <Linkedin className="w-4 h-4" />
-                  </a>
-                  <a
-                    href="#"
-                    aria-label="Twitter"
-                    className="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center hover:bg-[#2626e7] hover:text-white transition-all"
-                  >
-                    <Twitter className="w-4 h-4" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
