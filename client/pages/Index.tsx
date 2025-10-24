@@ -294,7 +294,7 @@ export default function Index() {
             </div>
             <svg
               ref={svgRef}
-              className="hero-image hero-3d-animation opacity-0 scale-95"
+              className="hero-image hero-3d-animation cursor-target opacity-0 scale-95"
               viewBox="0 0 500 400"
               xmlns="http://www.w3.org/2000/svg"
             >
