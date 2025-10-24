@@ -22,7 +22,7 @@ const TargetCursor = ({
       cornerSize: 12,
       parallaxStrength: 0.00005,
     }),
-    []
+    [],
   );
 
   const moveCursor = useCallback((x: number, y: number) => {
@@ -54,10 +54,16 @@ const TargetCursor = ({
 
     const cleanupTarget = (target: Element) => {
       if (currentTargetMove) {
-        target.removeEventListener("mousemove", currentTargetMove as EventListener);
+        target.removeEventListener(
+          "mousemove",
+          currentTargetMove as EventListener,
+        );
       }
       if (currentLeaveHandler) {
-        target.removeEventListener("mouseleave", currentLeaveHandler as EventListener);
+        target.removeEventListener(
+          "mouseleave",
+          currentLeaveHandler as EventListener,
+        );
       }
       currentTargetMove = null;
       currentLeaveHandler = null;
@@ -76,7 +82,11 @@ const TargetCursor = ({
       }
       spinTl.current = gsap
         .timeline({ repeat: -1 })
-        .to(cursor, { rotation: "+=360", duration: spinDuration, ease: "none" });
+        .to(cursor, {
+          rotation: "+=360",
+          duration: spinDuration,
+          ease: "none",
+        });
     };
 
     createSpinTimeline();
@@ -214,7 +224,7 @@ const TargetCursor = ({
               duration: 0.2,
               ease: "power2.out",
             },
-            0
+            0,
           );
         });
       };
@@ -261,7 +271,7 @@ const TargetCursor = ({
                 duration: 0.3,
                 ease: "power3.out",
               },
-              0
+              0,
             );
           });
         }
@@ -270,7 +280,7 @@ const TargetCursor = ({
           if (!activeTarget && cursorRef.current && spinTl.current) {
             const currentRotation = gsap.getProperty(
               cursorRef.current,
-              "rotation"
+              "rotation",
             ) as number;
             const normalizedRotation = currentRotation % 360;
 
@@ -328,7 +338,11 @@ const TargetCursor = ({
       spinTl.current.kill();
       spinTl.current = gsap
         .timeline({ repeat: -1 })
-        .to(cursorRef.current, { rotation: "+=360", duration: spinDuration, ease: "none" });
+        .to(cursorRef.current, {
+          rotation: "+=360",
+          duration: spinDuration,
+          ease: "none",
+        });
     }
   }, [spinDuration]);
 

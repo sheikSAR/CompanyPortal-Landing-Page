@@ -47,17 +47,16 @@ const Footer: React.FC = () => {
                 </a>
               </p>
               <p className="mt-3 pt-2 border-t border-gray-300">
-                Broskieshub, ACIC-KIF, KARE, Central Library 2nd Floor, Anand Nagar,
-                Krishnan Koil, S.Ramachandrapuram, Virudhunagar, Srivilliputhur, Tamil Nadu, India 626126
+                Broskieshub, ACIC-KIF, KARE, Central Library 2nd Floor, Anand
+                Nagar, Krishnan Koil, S.Ramachandrapuram, Virudhunagar,
+                Srivilliputhur, Tamil Nadu, India 626126
               </p>
             </div>
           </div>
 
           {/* Social Icons */}
           <div className="flex-1">
-            <h4 className="text-sm font-semibold text-gray-900 mb-3">
-              Follow
-            </h4>
+            <h4 className="text-sm font-semibold text-gray-900 mb-3">Follow</h4>
             <div className="flex gap-3">
               <a
                 href="#"

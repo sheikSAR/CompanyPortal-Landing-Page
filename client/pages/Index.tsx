@@ -55,59 +55,87 @@ export default function Index() {
     const heroContext = gsap.context(() => {
       const tl = gsap.timeline();
 
-      tl.to(".hero-badge", {
-        duration: 0.8,
-        opacity: 1,
-        y: 0,
-        ease: "power2.out",
-        stagger: 0.1,
-      }, 0);
+      tl.to(
+        ".hero-badge",
+        {
+          duration: 0.8,
+          opacity: 1,
+          y: 0,
+          ease: "power2.out",
+          stagger: 0.1,
+        },
+        0,
+      );
 
-      tl.to(".hero-title", {
-        duration: 0.8,
-        opacity: 1,
-        y: 0,
-        ease: "power2.out",
-      }, 0.2);
+      tl.to(
+        ".hero-title",
+        {
+          duration: 0.8,
+          opacity: 1,
+          y: 0,
+          ease: "power2.out",
+        },
+        0.2,
+      );
 
-      tl.to(".hero-subtitle", {
-        duration: 0.8,
-        opacity: 1,
-        y: 0,
-        ease: "power2.out",
-      }, 0.4);
+      tl.to(
+        ".hero-subtitle",
+        {
+          duration: 0.8,
+          opacity: 1,
+          y: 0,
+          ease: "power2.out",
+        },
+        0.4,
+      );
 
-      tl.to(".hero-feature", {
-        duration: 0.6,
-        opacity: 1,
-        y: 0,
-        ease: "power2.out",
-        stagger: 0.1,
-      }, 0.5);
+      tl.to(
+        ".hero-feature",
+        {
+          duration: 0.6,
+          opacity: 1,
+          y: 0,
+          ease: "power2.out",
+          stagger: 0.1,
+        },
+        0.5,
+      );
 
-      tl.to(".hero-cta", {
-        duration: 0.8,
-        opacity: 1,
-        y: 0,
-        ease: "power2.out",
-      }, 0.8);
+      tl.to(
+        ".hero-cta",
+        {
+          duration: 0.8,
+          opacity: 1,
+          y: 0,
+          ease: "power2.out",
+        },
+        0.8,
+      );
 
       // SVG animation
-      tl.to(".hero-image", {
-        duration: 1,
-        opacity: 1,
-        scale: 1,
-        ease: "power2.out",
-      }, 0);
+      tl.to(
+        ".hero-image",
+        {
+          duration: 1,
+          opacity: 1,
+          scale: 1,
+          ease: "power2.out",
+        },
+        0,
+      );
 
       // Floating animation for SVG
-      gsap.to(".hero-image", {
-        y: -15,
-        duration: 3,
-        ease: "sine.inOut",
-        repeat: -1,
-        yoyo: true,
-      }, 1);
+      gsap.to(
+        ".hero-image",
+        {
+          y: -15,
+          duration: 3,
+          ease: "sine.inOut",
+          repeat: -1,
+          yoyo: true,
+        },
+        1,
+      );
     }, heroRef);
 
     return () => heroContext.revert();
@@ -211,7 +239,11 @@ export default function Index() {
         ref={heroRef}
         className="relative py-12 lg:py-16 min-h-[80vh] flex items-center"
       >
-        <TargetCursor targetSelector=".cursor-target" spinDuration={2} hideDefaultCursor={true} />
+        <TargetCursor
+          targetSelector=".cursor-target"
+          spinDuration={2}
+          hideDefaultCursor={true}
+        />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,#ffffff,#eef2ff,rgba(38,38,231,0.06))]"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -222,7 +254,13 @@ export default function Index() {
               </Badge>
               <div className="hero-title opacity-0 translate-y-4">
                 <GradientText
-                  colors={["#2626e7", "#4b4bff", "#8c78ff", "#4b4bff", "#2626e7"]}
+                  colors={[
+                    "#2626e7",
+                    "#4b4bff",
+                    "#8c78ff",
+                    "#4b4bff",
+                    "#2626e7",
+                  ]}
                   animationSpeed={3}
                   className="text-4xl lg:text-6xl font-bold leading-tight mb-6"
                 >
@@ -235,7 +273,10 @@ export default function Index() {
               </p>
 
               <div className="space-y-5 mb-10">
-                <div className="hero-feature flex items-start gap-4 group opacity-0 translate-y-4" style={{ animationDelay: "0.7s" }}>
+                <div
+                  className="hero-feature flex items-start gap-4 group opacity-0 translate-y-4"
+                  style={{ animationDelay: "0.7s" }}
+                >
                   <div className="w-8 h-8 bg-brand-gradient rounded-full flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                     <Check className="w-5 h-5 text-white" />
                   </div>
@@ -247,7 +288,10 @@ export default function Index() {
                     45-minute interview.
                   </p>
                 </div>
-                <div className="hero-feature flex items-start gap-4 group opacity-0 translate-y-4" style={{ animationDelay: "0.8s" }}>
+                <div
+                  className="hero-feature flex items-start gap-4 group opacity-0 translate-y-4"
+                  style={{ animationDelay: "0.8s" }}
+                >
                   <div className="w-8 h-8 bg-brand-gradient rounded-full flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                     <Check className="w-5 h-5 text-white" />
                   </div>
@@ -259,7 +303,10 @@ export default function Index() {
                     screening calls. We do the heavy lifting.
                   </p>
                 </div>
-                <div className="hero-feature flex items-start gap-4 group opacity-0 translate-y-4" style={{ animationDelay: "0.9s" }}>
+                <div
+                  className="hero-feature flex items-start gap-4 group opacity-0 translate-y-4"
+                  style={{ animationDelay: "0.9s" }}
+                >
                   <div className="w-8 h-8 bg-brand-gradient rounded-full flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
                     <Check className="w-5 h-5 text-white" />
                   </div>
@@ -949,7 +996,10 @@ export default function Index() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 bg-white scroll-reveal opacity-0 translate-y-10" id="faq">
+      <section
+        className="py-24 bg-white scroll-reveal opacity-0 translate-y-10"
+        id="faq"
+      >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
@@ -1060,7 +1110,10 @@ export default function Index() {
       </section>
 
       {/* Final CTA Section */}
-      <section id="final-cta" className="py-20 md:py-24 bg-white scroll-reveal opacity-0 translate-y-10">
+      <section
+        id="final-cta"
+        className="py-20 md:py-24 bg-white scroll-reveal opacity-0 translate-y-10"
+      >
         <div className="container mx-auto px-6">
           <div className="bg-indigo-600 rounded-2xl p-10 md:p-16 text-center shadow-2xl bg-[radial-gradient(ellipse_at_top,var(--tw-gradient-stops))] from-indigo-600 to-indigo-800 relative overflow-hidden">
             <div

@@ -66,7 +66,7 @@ const Navbar: React.FC = () => {
             window.open(
               "https://hire.broskieshub.com/",
               "_blank",
-              "noopener,noreferrer"
+              "noopener,noreferrer",
             )
           }
           className={`hidden lg:inline-flex px-6 py-2 text-sm rounded-lg btn-premium cta-pulse ${
@@ -109,7 +109,7 @@ const Navbar: React.FC = () => {
               window.open(
                 "https://hire.broskieshub.com/",
                 "_blank",
-                "noopener,noreferrer"
+                "noopener,noreferrer",
               );
               setMobileMenuOpen(false);
             }}

@@ -26,7 +26,7 @@ const FomoAlert: React.FC = () => {
         opacity: 0,
         ease: "power2.in",
       },
-      "+=15"
+      "+=15",
     );
 
     // Re-show after 10 seconds total
@@ -46,7 +46,9 @@ const FomoAlert: React.FC = () => {
       }}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-center gap-2">
-        <span className="text-lg font-bold">🚀 Only 5 pilot slots left this month!</span>
+        <span className="text-lg font-bold">
+          🚀 Only 5 pilot slots left this month!
+        </span>
         <button
           onClick={() => setIsVisible(false)}
           className="ml-4 font-semibold hover:bg-white/20 px-3 py-1 rounded-lg transition-colors"
