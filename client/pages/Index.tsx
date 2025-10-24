@@ -211,6 +211,7 @@ export default function Index() {
         ref={heroRef}
         className="relative py-12 lg:py-16 min-h-[80vh] flex items-center"
       >
+        <TargetCursor targetSelector=".cursor-target" spinDuration={2} hideDefaultCursor={true} />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,#ffffff,#eef2ff,rgba(38,38,231,0.06))]"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
