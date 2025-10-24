@@ -283,7 +283,7 @@ export default function Index() {
                     "noopener,noreferrer",
                   )
                 }
-                className="hero-cta px-12 py-6 text-lg rounded-xl btn-premium cta-pulse opacity-0 translate-y-4"
+                className="hero-cta cursor-target px-12 py-6 text-lg rounded-xl btn-premium cta-pulse opacity-0 translate-y-4"
               >
                 Request My Free Pilot
               </Button>
