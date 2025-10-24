@@ -678,4 +678,29 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
+
+  /* 3D animation for hero illustration */
+  @keyframes hero-3d-rotate {
+    0% {
+      transform: perspective(1000px) rotateX(5deg) rotateY(-10deg) rotateZ(0deg) translateY(0);
+    }
+    25% {
+      transform: perspective(1000px) rotateX(-5deg) rotateY(10deg) rotateZ(2deg) translateY(-8px);
+    }
+    50% {
+      transform: perspective(1000px) rotateX(-8deg) rotateY(5deg) rotateZ(-2deg) translateY(-15px);
+    }
+    75% {
+      transform: perspective(1000px) rotateX(5deg) rotateY(-5deg) rotateZ(1deg) translateY(-8px);
+    }
+    100% {
+      transform: perspective(1000px) rotateX(5deg) rotateY(-10deg) rotateZ(0deg) translateY(0);
+    }
+  }
+
+  .hero-3d-animation {
+    animation: hero-3d-rotate 6s ease-in-out infinite;
+    transform-style: preserve-3d;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+  }
 }
