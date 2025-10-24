@@ -17,7 +17,7 @@ const FomoAlert: React.FC = () => {
       ease: "power2.out",
     });
 
-    // Hide after 4 seconds
+    // Hide after 15 seconds
     timeline.to(
       ".fomo-alert",
       {
@@ -26,26 +26,23 @@ const FomoAlert: React.FC = () => {
         opacity: 0,
         ease: "power2.in",
       },
-      "+=4"
+      "+=15"
     );
 
-    // Re-show after 30 seconds
+    // Re-show after 10 seconds total
     const hideTimeout = setTimeout(() => {
       setIsVisible(true);
-    }, 30000);
+    }, 10000);
 
     return () => clearTimeout(hideTimeout);
   }, [isVisible]);
 
   return (
     <div
-      className="fomo-alert fixed top-0 left-0 right-0 z-[100] bg-gradient-to-r from-orange-500 to-red-500 text-white text-center py-3 px-4"
+      className="fomo-alert fixed top-20 left-0 right-0 z-40 bg-gradient-to-r from-orange-500 to-red-500 text-white text-center py-3 px-4"
       style={{
         transform: "translateY(-100px)",
         opacity: 0,
-      }}
-      onAnimationComplete={() => {
-        setTimeout(() => setIsVisible(false), 4000);
       }}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-center gap-2">
