@@ -46,6 +46,10 @@ const Footer: React.FC = () => {
                   +91 8148040507
                 </a>
               </p>
+              <p className="mt-3 pt-2 border-t border-gray-300">
+                Broskieshub, ACIC-KIF, KARE, Central Library 2nd Floor, Anand Nagar,
+                Krishnan Koil, S.Ramachandrapuram, Virudhunagar, Srivilliputhur, Tamil Nadu, India 626126
+              </p>
             </div>
           </div>
 
